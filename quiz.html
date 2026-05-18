@@ -3,19 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اختبار الحيوانات وبيوتها</title>
+    <title>اختبار متعدد الأسئلة</title>
     <style>
-        .feedback {
-            font-weight: bold;
-            margin-top: 15px;
-            font-size: 1.2em;
-        }
-        .correct {
-            color: green;
-        }
-        .incorrect {
-            color: red;
-        }
+        body { font-family: Arial, sans-serif; margin: 20px; text-align: right; }
+        .question-container { display: none; }
+        .question-container.active { display: block; }
+        .feedback { font-weight: bold; margin-top: 15px; font-size: 1.2em; }
+        .correct { color: green; }
+        .incorrect { color: red; }
     </style>
 </head>
 <body>
@@ -23,38 +18,60 @@
     <h2>صفحة الاختبارات التعليمية</h2>
     <hr>
 
-    <h3>اختبر معلوماتك:</h3>
-    <p>ما هو اسم بيت الأسد؟</p>
-    
-    <form name="quizForm">
-        <input type="radio" id="q1_option1" name="lion" value="وجار" onchange="checkAnswer()"> 
-        <label for="q1_option1">وجار</label><br>
-        
-        <input type="radio" id="q1_option2" name="lion" value="عرين" onchange="checkAnswer()"> 
-        <label for="q1_option2">عرين (الإجابة الصحيحة)</label><br>
-        
-        <input type="radio" id="q1_option3" name="lion" value="جحر" onchange="checkAnswer()"> 
-        <label for="q1_option3">جحر</label>
-    </form>
+    <div id="quiz">
+        <!-- السؤال الأول -->
+        <div class="question-container active" id="q1">
+            <h3>السؤال 1:</h3>
+            <p>ما هو اسم بيت الأسد؟</p>
+            <input type="radio" id="q1_opt1" name="q1" value="وجار" onclick="checkAnswer('q1', 'وجار', 'عرين')">
+            <label for="q1_opt1">وجار</label><br>
+            <input type="radio" id="q1_opt2" name="q1" value="عرين" onclick="checkAnswer('q1', 'عرين', 'عرين')">
+            <label for="q1_opt2">عرين</label><br>
+            <input type="radio" id="q1_opt3" name="q1" value="جحر" onclick="checkAnswer('q1', 'جحر', 'عرين')">
+            <label for="q1_opt3">جحر</label>
+        </div>
 
-    <div id="result" class="feedback"></div>
+        <!-- السؤال الثاني -->
+        <div class="question-container" id="q2">
+            <h3>السؤال 2:</h3>
+            <p>ما هو اسم بيت الأرنب؟</p>
+            <input type="radio" id="q2_opt1" name="q2" value="جحر" onclick="checkAnswer('q2', 'جحر', 'جحر')">
+            <label for="q2_opt1">جحر</label><br>
+            <input type="radio" id="q2_opt2" name="q2" value="عرين" onclick="checkAnswer('q2', 'عرين', 'johr')">
+            <label for="q2_opt2">عرين</label><br>
+            <input type="radio" id="q2_opt3" name="q2" value="قفص" onclick="checkAnswer('q2', 'قفص', 'johr')">
+            <label for="q2_opt3">قفص</label>
+        </div>
+    </div>
+
+    <div id="feedback" class="feedback"></div>
 
     <br><br>
     <a href="index.html">العودة للصفحة الرئيسية</a>
 
     <script>
-        function checkAnswer() {
-            var form = document.forms["quizForm"];
-            var selectedValue = form.elements["lion"].value;
-            var resultDiv = document.getElementById("result");
+        function checkAnswer(questionId, selected, correct) {
+            var feedbackDiv = document.getElementById('feedback');
             
-            if (selectedValue === "عرين") {
-                resultDiv.textContent = "إجابة صحيحة!";
-                resultDiv.className = "feedback correct";
+            if (selected === correct) {
+                feedbackDiv.textContent = "إجابة صحيحة!";
+                feedbackDiv.className = "feedback correct";
             } else {
-                resultDiv.textContent = "إجابة خاطئة، حاول مرة أخرى.";
-                resultDiv.className = "feedback incorrect";
+                feedbackDiv.textContent = "إجابة خاطئة.";
+                feedbackDiv.className = "feedback incorrect";
             }
+            
+            setTimeout(function() {
+                document.getElementById(questionId).classList.remove('active');
+                feedbackDiv.textContent = "";
+                
+                if (questionId === 'q1') {
+                    document.getElementById('q2').classList.add('active');
+                } else {
+                    alert("انتهى الاختبار!");
+                    window.location.href = 'index.html';
+                }
+            }, 1000); 
         }
     </script>
 </body>
