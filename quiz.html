@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اختبار الحيوانات وبيوتها</title>
+    <style>
+        .feedback {
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,17 +26,36 @@
     <h3>اختبر معلوماتك:</h3>
     <p>ما هو اسم بيت الأسد؟</p>
     
-    <input type="radio" id="q1_option1" name="lion" value="وجار"> 
-    <label for="q1_option1">وجار</label><br>
-    
-    <input type="radio" id="q1_option2" name="lion" value="عرين"> 
-    <label for="q1_option2">عرين (الإجابة الصحيحة)</label><br>
-    
-    <input type="radio" id="q1_option3" name="lion" value="جحر"> 
-    <label for="q1_option3">جحر</label>
+    <form name="quizForm">
+        <input type="radio" id="q1_option1" name="lion" value="وجار" onchange="checkAnswer()"> 
+        <label for="q1_option1">وجار</label><br>
+        
+        <input type="radio" id="q1_option2" name="lion" value="عرين" onchange="checkAnswer()"> 
+        <label for="q1_option2">عرين (الإجابة الصحيحة)</label><br>
+        
+        <input type="radio" id="q1_option3" name="lion" value="جحر" onchange="checkAnswer()"> 
+        <label for="q1_option3">جحر</label>
+    </form>
+
+    <div id="result" class="feedback"></div>
 
     <br><br>
     <a href="index.html">العودة للصفحة الرئيسية</a>
 
+    <script>
+        function checkAnswer() {
+            var form = document.forms["quizForm"];
+            var selectedValue = form.elements["lion"].value;
+            var resultDiv = document.getElementById("result");
+            
+            if (selectedValue === "عرين") {
+                resultDiv.textContent = "إجابة صحيحة!";
+                resultDiv.className = "feedback correct";
+            } else {
+                resultDiv.textContent = "إجابة خاطئة، حاول مرة أخرى.";
+                resultDiv.className = "feedback incorrect";
+            }
+        }
+    </script>
 </body>
 </html>
