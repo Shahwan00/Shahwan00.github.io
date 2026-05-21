@@ -172,15 +172,15 @@
             <div class="progress-bar" id="letters-progress"></div>
         </div>
         <div class="grid-container">
-            <div class="letter-card" onclick="playLetter('A', this)">
+            <div class="letter-card" onclick="playLetter('a', this)">
                 <span class="checkmark">✓</span>
                 A
             </div>
-            <div class="letter-card" onclick="playLetter('B', this)">
+            <div class="letter-card" onclick="playLetter('b', this)">
                 <span class="checkmark">✓</span>
                 B
             </div>
-            <div class="letter-card" onclick="playLetter('C', this)">
+            <div class="letter-card" onclick="playLetter('c', this)">
                 <span class="checkmark">✓</span>
                 C
             </div>
@@ -218,7 +218,7 @@
                 <p>ما هو معنى كلمة "𐺀𐺛"؟</p>
                 <div class="option-container" onclick="submitAnswer('q2', 'سلام', 'ماء')">سلام</div>
                 <div class="option-container" onclick="submitAnswer('q2', 'ماء', 'ماء')">ماء</div>
-                <div class="option-container" onclick="sound-av'q2', 'خبز', 'ماء')">خبز</div>
+                <div class="option-container" onclick="submitAnswer('q2', 'خبز', 'ماء')">خبز</div>
             </div>
         </div>
         
@@ -240,13 +240,16 @@
     }
 
     // نظام نطق وحفظ تقدم الحروف
-    let totalLetters = 3; // عدد الحروف الإجمالي المتاح في قسم الحروف حالياً
+    let totalLetters = 3; 
     let completedLetters = new Set();
 
     function playLetter(letterId, element) {
         // تشغيل الصوت الخاص بالحرف
         let audio = document.getElementById('sound-' + letterId);
-        if(audio) audio.play();
+        if(audio) {
+            audio.currentTime = 0; // لإعادة تشغيل الصوت من البداية لو ضغطت بسرعة
+            audio.play();
+        }
 
         // إضافة علامة الصح وحساب التقدم
         if (!completedLetters.has(letterId)) {
