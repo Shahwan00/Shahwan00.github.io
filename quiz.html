@@ -247,7 +247,7 @@
         // تشغيل الصوت الخاص بالحرف
         let audio = document.getElementById('sound-' + letterId);
         if(audio) {
-            audio.currentTime = 0; // لإعادة تشغيل الصوت من البداية لو ضغطت بسرعة
+            audio.currentTime = 0; // لإعادة تشغيل الصوت فوراً عند الضغط المتكرر
             audio.play();
         }
 
@@ -287,7 +287,7 @@
             if (questionId === 'q1') {
                 document.getElementById('q2').classList.add('active');
             } else {
-                // عند نهاية الامتحان، يتم إظهار النتيجة النهائية كاملة للمستخدم
+                // النتيجة النهائية
                 document.getElementById('quiz-box').innerHTML = `
                     <div style="padding:20px;">
                         <h2 style="color:var(--primary-color);">لقد أكملت الاختبار بنجاح! 🏆</h2>
