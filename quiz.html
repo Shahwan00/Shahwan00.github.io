@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>𐺏𐺦𐺢𐺨𐺢𐺀 𐺏𐺌𐺡𐺀𐺢𐺩 𐺩𐺏𐺨𐺋𐺨</title>
+    <title>تعلم الحروف والكلمات</title>
     <style>
         :root {
             --primary-color: #0077ff;
@@ -28,7 +28,6 @@
         }
         h2 { color: #333; margin-bottom: 20px; }
         
-        /* شريط التنقل العلوي */
         .nav-tabs {
             display: flex;
             justify-content: space-around;
@@ -50,11 +49,9 @@
             border-bottom: 3px solid var(--primary-color);
         }
 
-        /* التحكم في عرض الأقسام */
         .section { display: none; }
         .section.active { display: block; }
 
-        /* قسم الحروف (شبكة الحروف) */
         .grid-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -86,7 +83,6 @@
         }
         .letter-card.completed .checkmark { display: block; }
         
-        /* شريط التقدم للحروف */
         .progress-bar-container {
             background: #eee;
             border-radius: 10px;
@@ -101,14 +97,12 @@
             transition: width 0.3s;
         }
 
-        /* قسم الكلمات */
         .word-card {
             background: #fff;
             border: 1px solid #eee;
             padding: 20px;
             border-radius: 12px;
             margin-bottom: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
         .word-text { font-size: 28px; font-weight: bold; color: #333; }
         .word-meaning { color: #666; margin: 5px 0 15px 0; font-size: 18px; }
@@ -122,7 +116,6 @@
             cursor: pointer;
         }
 
-        /* قسم الاختبار */
         .quiz-card { display: none; }
         .quiz-card.active { display: block; }
         .option-container {
@@ -134,7 +127,6 @@
             cursor: pointer;
             text-align: right;
             font-size: 18px;
-            transition: background 0.2s;
         }
         .option-container:hover { background: #e9ecef; }
         .feedback { font-weight: bold; margin-top: 15px; font-size: 1.2em; min-height: 30px; }
@@ -152,7 +144,7 @@
 <body>
 
 <div class="container">
-    <h2> 𐺏𐺦𐺢𐺨𐺢𐺀 𐺏𐺌𐺡𐺀𐺢𐺩 𐺩𐺏𐺨𐺋𐺨</h2>
+    <h2>تطبيق تعلم الحروف</h2>
 
     <div class="nav-tabs">
         <button class="tab-btn active" id="tab-letters" onclick="switchSection('letters')">الحروف</button>
@@ -172,15 +164,15 @@
             <div class="progress-bar" id="letters-progress"></div>
         </div>
         <div class="grid-container">
-            <div class="letter-card" onclick="playLetter('a', this)">
+            <div class="letter-card" onclick="playAudio('a', this)">
                 <span class="checkmark">✓</span>
                 A
             </div>
-            <div class="letter-card" onclick="playLetter('b', this)">
+            <div class="letter-card" onclick="playAudio('b', this)">
                 <span class="checkmark">✓</span>
                 B
             </div>
-            <div class="letter-card" onclick="playLetter('c', this)">
+            <div class="letter-card" onclick="playAudio('c', this)">
                 <span class="checkmark">✓</span>
                 C
             </div>
@@ -189,17 +181,15 @@
 
     <div id="section-words" class="section">
         <p>استمع للكلمات وتعلم معانيها:</p>
-        
         <div class="word-card">
             <div class="word-text">𐺑𐺠𐺀𐺛</div>
             <div class="word-meaning">سلام</div>
-            <button class="audio-btn" onclick="document.getElementById('sound-shlama').play()">🔊 استماع</button>
+            <button class="audio-btn" onclick="playAudio('shlama', this)">🔊 استماع</button>
         </div>
-
         <div class="word-card">
             <div class="word-text">𐺀𐺛</div>
             <div class="word-meaning">ماء</div>
-            <button class="audio-btn" onclick="document.getElementById('sound-av').play()">🔊 استماع</button>
+            <button class="audio-btn" onclick="playAudio('av', this)">🔊 استماع</button>
         </div>
     </div>
 
@@ -221,7 +211,6 @@
                 <div class="option-container" onclick="submitAnswer('q2', 'خبز', 'ماء')">خبز</div>
             </div>
         </div>
-        
         <div id="quiz-feedback" class="feedback"></div>
     </div>
 </div>
@@ -229,7 +218,7 @@
 <a href="index.html" class="home-link">العودة للرئيسية</a>
 
 <script>
-    // نظام التنقل بين الأقسام
+    // التنقل بين الأقسام
     function switchSection(sectionName) {
         document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
         document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -239,36 +228,39 @@
         document.getElementById('quiz-feedback').textContent = ""; 
     }
 
-    // نظام نطق وحفظ تقدم الحروف
+    // دالة تشغيل الصوت الذكية مع فحص الأخطاء
     let totalLetters = 3; 
     let completedLetters = new Set();
 
-    function playLetter(letterId, element) {
-        // تشغيل الصوت الخاص بالحرف
-        let audio = document.getElementById('sound-' + letterId);
-        if(audio) {
-            audio.currentTime = 0; // لإعادة تشغيل الصوت فوراً عند الضغط المتكرر
-            audio.play();
-        }
-
-        // إضافة علامة الصح وحساب التقدم
-        if (!completedLetters.has(letterId)) {
-            completedLetters.add(letterId);
-            element.classList.add('completed');
+    function playAudio(id, element) {
+        let audio = document.getElementById('sound-' + id);
+        if (audio) {
+            audio.currentTime = 0;
             
-            // تحديث شريط التقدم
-            let progressPercent = (completedLetters.size / totalLetters) * 100;
-            document.getElementById('letters-progress').style.width = progressPercent + '%';
+            // محاولة تشغيل الصوت والتقاط الخطأ إن وجد
+            audio.play().catch(error => {
+                alert("لم نتمكن من تشغيل الصوت 'audio/" + id + ".mp3'. تأكد أن الملف مرفوع في المجلد الصحيح وبنفس الاسم تماماً وبحروف صغيرة.");
+                console.error("خطأ في تشغيل الصوت:", error);
+            });
+
+            // تحديث التقدم للحروف فقط
+            if (id === 'a' || id === 'b' || id === 'c') {
+                if (!completedLetters.has(id)) {
+                    completedLetters.add(id);
+                    element.classList.add('completed');
+                    let progressPercent = (completedLetters.size / totalLetters) * 100;
+                    document.getElementById('letters-progress').style.width = progressPercent + '%';
+                }
+            }
         }
     }
 
-    // نظام الاختبار الذكي والتنقل التلقائي
+    // نظام الاختبار
     let score = 0;
     let totalQuestions = 2;
 
     function submitAnswer(questionId, selected, correct) {
         let feedbackDiv = document.getElementById('quiz-feedback');
-        
         if (selected === correct) {
             score++;
             feedbackDiv.textContent = "إجابة صحيحة! 🎉";
@@ -278,7 +270,6 @@
             feedbackDiv.className = "feedback incorrect";
         }
 
-        // الانتظار ثانية واحدة ثم الانتقال للسؤال التالي تلقائياً
         setTimeout(function() {
             feedbackDiv.textContent = "";
             let currentQuestion = document.getElementById(questionId);
@@ -287,7 +278,6 @@
             if (questionId === 'q1') {
                 document.getElementById('q2').classList.add('active');
             } else {
-                // النتيجة النهائية
                 document.getElementById('quiz-box').innerHTML = `
                     <div style="padding:20px;">
                         <h2 style="color:var(--primary-color);">لقد أكملت الاختبار بنجاح! 🏆</h2>
