@@ -3,76 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اختبار متعدد الأسئلة</title>
+    <title>تطبيق التعلم التفاعلي</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; text-align: right; }
-        .question-container { display: none; }
-        .question-container.active { display: block; }
-        .feedback { font-weight: bold; margin-top: 15px; font-size: 1.2em; }
-        .correct { color: green; }
-        .incorrect { color: red; }
+        :root {
+            --primary-color: #0077ff;
+            --success-color: #2ecc71;
+            --danger-color: #e74c3c;
+            --bg-color: #f8f9fa;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h2 { color: #333; margin-bottom: 20px; }
+        
+        /* شريط التنقل العلوي */
+        .nav-tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .tab-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            color: #888;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        /* التحكم في عرض الأقسام */
+        .section { display: none; }
+        .section.active { display: block; }
+
+        /* قسم الحروف (شبكة الحروف) */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .letter-card {
+            background: #fff;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px 10px;
+            font-size: 24px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+        }
+        .letter-card:hover { border-color: var(--primary-color); }
+        .letter-card.completed {
+            border-color: var(--success-color);
+            background-color: #f4fbf7;
+        }
+        .checkmark {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            color: var(--success-color);
+            font-size: 14px;
+            display: none;
+        }
+        .letter-card.completed .checkmark { display: block; }
+        
+        /* شريط التقدم للحروف */
+        .progress-bar-container {
+            background: #eee;
+            border-radius: 10px;
+            height: 10px;
+            margin: 15px 0 25px 0;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background: var(--primary-color);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        /* قسم الكلمات */
+        .word-card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .word-text { font-size: 28px; font-weight: bold; color: #333; }
+        .word-meaning { color: #666; margin: 5px 0 15px 0; font-size: 18px; }
+        .audio-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* قسم الاختبار */
+        .quiz-card { display: none; }
+        .quiz-card.active { display: block; }
+        .option-container {
+            display: block;
+            background: #f1f3f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: right;
+            font-size: 18px;
+            transition: background 0.2s;
+        }
+        .option-container:hover { background: #e9ecef; }
+        .feedback { font-weight: bold; margin-top: 15px; font-size: 1.2em; min-height: 30px; }
+        .correct { color: var(--success-color); }
+        .incorrect { color: var(--danger-color); }
+
+        .home-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #666;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
-    <h2>صفحة الاختبارات التعليمية</h2>
-    <hr>
+<div class="container">
+    <h2>تطبيق التعلم التفاعلي</h2>
 
-    <div id="quiz">
-        <!-- السؤال الأول -->
-        <div class="question-container active" id="q1">
-            <h3>السؤال 1:</h3>
-            <p>ما هو اسم بيت الأسد؟</p>
-            <input type="radio" id="q1_opt1" name="q1" value="وجار" onclick="checkAnswer('q1', 'وجار', 'عرين')">
-            <label for="q1_opt1">وجار</label><br>
-            <input type="radio" id="q1_opt2" name="q1" value="عرين" onclick="checkAnswer('q1', 'عرين', 'عرين')">
-            <label for="q1_opt2">عرين</label><br>
-            <input type="radio" id="q1_opt3" name="q1" value="جحر" onclick="checkAnswer('q1', 'جحر', 'عرين')">
-            <label for="q1_opt3">جحر</label>
+    <div class="nav-tabs">
+        <button class="tab-btn active" id="tab-letters" onclick="switchSection('letters')">الحروف</button>
+        <button class="tab-btn" id="tab-words" onclick="switchSection('words')">الكلمات</button>
+        <button class="tab-btn" id="tab-quiz" onclick="switchSection('quiz')">الاختبار</button>
+    </div>
+
+    <audio id="sound-A"><source src="audio/a.mp3" type="audio/mpeg"></audio>
+    <audio id="sound-B"><source src="audio/b.mp3" type="audio/mpeg"></audio>
+    <audio id="sound-C"><source src="audio/c.mp3" type="audio/mpeg"></audio>
+    <audio id="sound-shlama"><source src="audio/shlama.mp3" type="audio/mpeg"></audio>
+    <audio id="sound-av"><source src="audio/av.mp3" type="audio/mpeg"></audio>
+
+    <div id="section-letters" class="section active">
+        <p>اضغط على الحرف للاستماع لنطقه ومتابعة تقدمك:</p>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="letters-progress"></div>
         </div>
-
-        <!-- السؤال الثاني -->
-        <div class="question-container" id="q2">
-            <h3>السؤال 2:</h3>
-            <p>ما هو اسم بيت الأرنب؟</p>
-            <input type="radio" id="q2_opt1" name="q2" value="جحر" onclick="checkAnswer('q2', 'جحر', 'جحر')">
-            <label for="q2_opt1">جحر</label><br>
-            <input type="radio" id="q2_opt2" name="q2" value="عرين" onclick="checkAnswer('q2', 'عرين', 'johr')">
-            <label for="q2_opt2">عرين</label><br>
-            <input type="radio" id="q2_opt3" name="q2" value="قفص" onclick="checkAnswer('q2', 'قفص', 'johr')">
-            <label for="q2_opt3">قفص</label>
+        <div class="grid-container">
+            <div class="letter-card" onclick="playLetter('A', this)">
+                <span class="checkmark">✓</span>
+                A
+            </div>
+            <div class="letter-card" onclick="playLetter('B', this)">
+                <span class="checkmark">✓</span>
+                B
+            </div>
+            <div class="letter-card" onclick="playLetter('C', this)">
+                <span class="checkmark">✓</span>
+                C
+            </div>
         </div>
     </div>
 
-    <div id="feedback" class="feedback"></div>
+    <div id="section-words" class="section">
+        <p>استمع للكلمات وتعلم معانيها:</p>
+        
+        <div class="word-card">
+            <div class="word-text">Shlama</div>
+            <div class="word-meaning">سلام</div>
+            <button class="audio-btn" onclick="document.getElementById('sound-shlama').play()">🔊 استماع</button>
+        </div>
 
-    <br><br>
-    <a href="index.html">العودة للصفحة الرئيسية</a>
+        <div class="word-card">
+            <div class="word-text">Av</div>
+            <div class="word-meaning">ماء</div>
+            <button class="audio-btn" onclick="document.getElementById('sound-av').play()">🔊 استماع</button>
+        </div>
+    </div>
 
-    <script>
-        function checkAnswer(questionId, selected, correct) {
-            var feedbackDiv = document.getElementById('feedback');
+    <div id="section-quiz" class="section">
+        <div id="quiz-box">
+            <div class="quiz-card active" id="q1">
+                <h3>السؤال 1:</h3>
+                <p>ما هو معنى كلمة "Shlama"؟</p>
+                <div class="option-container" onclick="submitAnswer('q1', 'سلام', 'سلام')">سلام</div>
+                <div class="option-container" onclick="submitAnswer('q1', 'ماء', 'سلام')">ماء</div>
+                <div class="option-container" onclick="submitAnswer('q1', 'شكراً', 'سلام')">شكراً</div>
+            </div>
+
+            <div class="quiz-card" id="q2">
+                <h3>السؤال 2:</h3>
+                <p>ما هو معنى كلمة "Av"؟</p>
+                <div class="option-container" onclick="submitAnswer('q2', 'سلام', 'ماء')">سلام</div>
+                <div class="option-container" onclick="submitAnswer('q2', 'ماء', 'ماء')">ماء</div>
+                <div class="option-container" onclick="sound-av'q2', 'خبز', 'ماء')">خبز</div>
+            </div>
+        </div>
+        
+        <div id="quiz-feedback" class="feedback"></div>
+    </div>
+</div>
+
+<a href="index.html" class="home-link">العودة للرئيسية</a>
+
+<script>
+    // نظام التنقل بين الأقسام
+    function switchSection(sectionName) {
+        document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        
+        document.getElementById('section-' + sectionName).classList.add('active');
+        document.getElementById('tab-' + sectionName).classList.add('active');
+        document.getElementById('quiz-feedback').textContent = ""; 
+    }
+
+    // نظام نطق وحفظ تقدم الحروف
+    let totalLetters = 3; // عدد الحروف الإجمالي المتاح في قسم الحروف حالياً
+    let completedLetters = new Set();
+
+    function playLetter(letterId, element) {
+        // تشغيل الصوت الخاص بالحرف
+        let audio = document.getElementById('sound-' + letterId);
+        if(audio) audio.play();
+
+        // إضافة علامة الصح وحساب التقدم
+        if (!completedLetters.has(letterId)) {
+            completedLetters.add(letterId);
+            element.classList.add('completed');
             
-            if (selected === correct) {
-                feedbackDiv.textContent = "إجابة صحيحة!";
-                feedbackDiv.className = "feedback correct";
-            } else {
-                feedbackDiv.textContent = "إجابة خاطئة.";
-                feedbackDiv.className = "feedback incorrect";
-            }
-            
-            setTimeout(function() {
-                document.getElementById(questionId).classList.remove('active');
-                feedbackDiv.textContent = "";
-                
-                if (questionId === 'q1') {
-                    document.getElementById('q2').classList.add('active');
-                } else {
-                    alert("انتهى الاختبار!");
-                    window.location.href = 'index.html';
-                }
-            }, 1000); 
+            // تحديث شريط التقدم
+            let progressPercent = (completedLetters.size / totalLetters) * 100;
+            document.getElementById('letters-progress').style.width = progressPercent + '%';
         }
-    </script>
+    }
+
+    // نظام الاختبار الذكي والتنقل التلقائي
+    let score = 0;
+    let totalQuestions = 2;
+
+    function submitAnswer(questionId, selected, correct) {
+        let feedbackDiv = document.getElementById('quiz-feedback');
+        
+        if (selected === correct) {
+            score++;
+            feedbackDiv.textContent = "إجابة صحيحة! 🎉";
+            feedbackDiv.className = "feedback correct";
+        } else {
+            feedbackDiv.textContent = "إجابة خاطئة! ❌";
+            feedbackDiv.className = "feedback incorrect";
+        }
+
+        // الانتظار ثانية واحدة ثم الانتقال للسؤال التالي تلقائياً
+        setTimeout(function() {
+            feedbackDiv.textContent = "";
+            let currentQuestion = document.getElementById(questionId);
+            currentQuestion.classList.remove('active');
+
+            if (questionId === 'q1') {
+                document.getElementById('q2').classList.add('active');
+            } else {
+                // عند نهاية الامتحان، يتم إظهار النتيجة النهائية كاملة للمستخدم
+                document.getElementById('quiz-box').innerHTML = `
+                    <div style="padding:20px;">
+                        <h2 style="color:var(--primary-color);">لقد أكملت الاختبار بنجاح! 🏆</h2>
+                        <p style="font-size:22px; font-weight:bold; margin:20px 0;">نتيجتك هي: ${score} من أصل ${totalQuestions}</p>
+                        <button class="audio-btn" onclick="location.reload()">إعادة الاختبار 🔄</button>
+                    </div>
+                `;
+            }
+        }, 1200);
+    }
+</script>
+
 </body>
 </html>
