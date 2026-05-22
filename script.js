@@ -1,43 +1,140 @@
-const questions = [
-    { char: "𐺀", options: ["أ", "ب", "ت", "ث"], answer: "أ", audio: "audio/1.mp3" },
-    { char: "𐺁", options: ["ب", "پ", "ت", "ث"], answer: "ب", audio: "audio/2.mp3" },
-    { char: "𐺂", options: ["ت", "ث", "ج", "پ"], answer: "پ", audio: "audio/3.mp3" },
-    { char: "𐺃", options: ["ح", "خ", "ث", "ج"], answer: "ث", audio: "audio/4.mp3" },
-    { char: "𐺄", options: ["ج", "د", "ذ", "ر"], answer: "ج", audio: "audio/5.mp3" },
-    { char: "𐺅", options: ["ز", "س", "ش", "ح"], answer: "ح", audio: "audio/6.mp3" },
-    { char: "𐺆", options: ["ص", "ض", "ط", "خ"], answer: "خ", audio: "audio/7.mp3" },
-    { char: "𐺇", options: ["ع", "غ", "ف", "د"], answer: "د", audio: "audio/8.mp3" },
-    { char: "𐺈", options: ["ق", "ك", "ل", "ذ"], answer: "ذ", audio: "audio/9.mp3" },
-    { char: "𐺉", options: ["م", "ن", "هـ", "ر"], answer: "ر", audio: "audio/10.mp3" },
-    { char: "𐺊", options: ["و", "ي", "ز", "أ"], answer: "ز", audio: "audio/11.mp3" },
-    { char: "𐺋", options: ["ب", "ت", "ث", "ژ"], answer: "ژ", audio: "audio/12.mp3" },
-    { char: "𐺌", options: ["س", "ش", "ص", "ض"], answer: "س", audio: "audio/13.mp3" },
-    { char: "𐺍", options: ["ط", "ظ", "ع", "ش"], answer: "ش", audio: "audio/14.mp3" },
-    { char: "𐺎", options: ["غ", "ف", "ق", "ص"], answer: "ص", audio: "audio/15.mp3" },
-    { char: "𐺏", options: ["ك", "ل", "م", "ض"], answer: "ض", audio: "audio/16.mp3" },
-    { char: "𐺐", options: ["ن", "هـ", "و", "ط"], answer: "ط", audio: "audio/17.mp3" },
-    { char: "𐺑", options: ["ي", "أ", "ب", "ظ"], answer: "ظ", audio: "audio/18.mp3" },
-    { char: "𐺒", options: ["ت", "ث", "ج", "ع"], answer: "ع", audio: "audio/19.mp3" },
-    { char: "𐺓", options: ["ح", "خ", "د", "غ"], answer: "غ", audio: "audio/20.mp3" },
-    { char: "𐺔", options: ["ذ", "ر", "ز", "ف"], answer: "ف", audio: "audio/21.mp3" },
-    { char: "𐺕", options: ["س", "ش", "ص", "ڤ"], answer: "ڤ", audio: "audio/22.mp3" },
-    { char: "𐺖", options: ["ض", "ط", "ظ", "ق"], answer: "ق", audio: "audio/23.mp3" },
-    { char: "𐺗", options: ["ع", "غ", "ف", "ك"], answer: "ك", audio: "audio/24.mp3" },
-    { char: "𐺘", options: ["ق", "ك", "ل", "گ"], answer: "گ", audio: "audio/25.mp3" },
-    { char: "𐺙", options: ["م", "ن", "هـ", "ل"], answer: "ل", audio: "audio/26.mp3" },
-    { char: "𐺚", options: ["و", "ي", "أ", "م"], answer: "م", audio: "audio/27.mp3" },
-    { char: "𐺛", options: ["ب", "ت", "ث", "ن"], answer: "ن", audio: "audio/28.mp3" },
-    { char: "𐺜", options: ["ج", "ح", "خ", "و"], answer: "و", audio: "audio/29.mp3" },
-    { char: "𐺝", options: ["د", "ذ", "ر", "هـ"], answer: "هـ", audio: "audio/30.mp3" },
-    { char: "𐺞", options: ["ز", "س", "ش", "هـا"], answer: "هـا", audio: "audio/31.mp3" },
-    { char: "𐺟", options: ["ص", "ض", "ط", "ي"], answer: "ي", audio: "audio/32.mp3" },
-    { char: "𐺠", options: ["ظ", "ع", "غ", "يـ ممدودة"], answer: "يـ ممدودة", audio: "audio/33.mp3" },
-    { char: "𐺡", options: ["ف", "ق", "ك", "خـ مفخمة"], answer: "خـ مفخمة", audio: "audio/34.mp3" },
-    { char: "𐺢", options: ["ل", "م", "ن", "حـ مفخمة"], answer: "حـ مفخمة", audio: "audio/35.mp3" },
-    { char: "𐺣", options: ["هـ", "و", "ي", "كاف مقلوبة"], answer: "كاف مقلوبة", audio: "audio/36.mp3" },
-    { char: "𐺤", options: ["أ", "ب", "ت", "تش"], answer: "تش", audio: "audio/37.mp3" },
-    { char: "𐺥", options: ["ث", "ج", "ح", "ج مجهورة"], answer: "ج مجهورة", audio: "audio/38.mp3" },
-    { char: "𐺦", options: ["خ", "د", "ذ", "شين مضاعفة"], answer: "شين مضاعفة", audio: "audio/39.mp3" },
-    { char: "𐺧", options: ["ر", "ز", "س", "واو ممدودة"], answer: "واو ممدودة", audio: "audio/40.mp3" },
-    { char: "𐺨", options: ["ص", "ض", "ط", "لام مفخمة"], answer: "لام مفخمة", audio: "audio/41.mp3" }
+// 1. قاعدة بيانات الحروف (الرمز اليزيدي، الترجمة بالكورمانجية والعربية، واسم ملف الصوت)
+const lettersData = [
+    { yezidi: "𐺀", kurmanji: "A", arabic: "ألف", audio: "audio/letter_a.mp3" },
+    { yezidi: "𐺁", kurmanji: "B", arabic: "باء", audio: "audio/letter_b.mp3" },
+    { yezidi: "𐺂", kurmanji: "C", arabic: "جيم", audio: "audio/letter_c.mp3" },
+    { yezidi: "𐺃", kurmanji: "Ç", arabic: "تشاء", audio: "audio/letter_ch.mp3" }
+    // يمكنك إضافة باقي الحروف هنا بنفس الترتيب
 ];
+
+// 2. قاعدة بيانات الكلمات
+const wordsData = [
+    { yezidi: "𐺀𐺁", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
+    { yezidi: "𐺃𐺁", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
+    { yezidi: "𐺁𐺀𐺁", kurmanji: "Bav", arabic: "أب", audio: "audio/word_bav.mp3" }
+    // يمكنك إضافة باقي الكلمات هنا بنفس الترتيب
+];
+
+// المتغيرات الخاصة بالاختبار
+let currentQuestionIndex = 0;
+let score = 0;
+
+// تشغيل الدالة عند تحميل الصفحة لبناء واجهة الحروف
+document.addEventListener("DOMContentLoaded", () => {
+    renderLetters();
+});
+
+// وظيفة تشغيل الصوت الموحدة
+function playSound(audioSrc) {
+    const audio = new Audio(audioSrc);
+    audio.play().catch(err => console.log("ملف الصوت غير موجود بعد: ", audioSrc));
+}
+
+// عرض الحروف في الصفحة
+function renderLetters() {
+    const grid = document.getElementById("letters-grid");
+    grid.innerHTML = "";
+    lettersData.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.onclick = () => playSound(item.audio);
+        
+        card.innerHTML = `
+            <div class="yezidi-text">${item.yezidi}</div>
+            <div class="translation">${item.kurmanji} / ${item.arabic}</div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// الانتقال إلى مرحلة الكلمات
+function goToWords() {
+    document.getElementById("letters-section").classList.remove("active");
+    document.getElementById("words-section").classList.add("active");
+    renderWords();
+}
+
+// عرض الكلمات في الصفحة
+function renderWords() {
+    const grid = document.getElementById("words-grid");
+    grid.innerHTML = "";
+    wordsData.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.onclick = () => playSound(item.audio);
+        
+        card.innerHTML = `
+            <div class="yezidi-text">${item.yezidi}</div>
+            <div class="translation">${item.kurmanji} (${item.arabic})</div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// الانتقال إلى مرحلة الاختبار
+function goToQuiz() {
+    document.getElementById("words-section").classList.remove("active");
+    document.getElementById("quiz-section").classList.add("active");
+    loadQuestion();
+}
+
+// تحميل سؤال الاختبار
+function loadQuestion() {
+    const questionText = document.getElementById("quiz-question");
+    const wordDisplay = document.getElementById("quiz-word");
+    const optionsGrid = document.getElementById("quiz-options");
+    const resultDiv = document.getElementById("quiz-result");
+
+    resultDiv.innerHTML = "";
+    optionsGrid.innerHTML = "";
+
+    if (currentQuestionIndex >= wordsData.length) {
+        questionText.innerHTML = "أحسنت! لقد أكملت الاختبار بنجاح.";
+        wordDisplay.innerHTML = `النتيجة: ${score} من ${wordsData.length}`;
+        return;
+    }
+
+    const currentWord = wordsData[currentQuestionIndex];
+    questionText.innerHTML = "ما معنى هذه الكلمة؟";
+    wordDisplay.innerHTML = currentWord.yezidi;
+
+    // تشغيل صوت الكلمة تلقائياً عند ظهور السؤال بمثابة مساعدة
+    playSound(currentWord.audio);
+
+    // إنشاء خيارات الإجابة (الإجابة الصحيحة + خيارات عشوائية خاطئة)
+    let options = [currentWord.arabic];
+    
+    // جلب خيارات خاطئة من الكلمات الأخرى لتنويع الاختبار
+    wordsData.forEach(w => {
+        if (w.arabic !== currentWord.arabic && options.length < 4) {
+            options.push(w.arabic);
+        }
+    });
+
+    // خلط الخيارات عشوائياً ليصبح الاختبار حقيقياً
+    options.sort(() => Math.random() - 0.5);
+
+    // عرض أزرار الخيارات
+    options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.innerText = option;
+        btn.onclick = () => checkAnswer(option, currentWord.arabic);
+        optionsGrid.appendChild(btn);
+    });
+}
+
+// التحقق من الإجابة
+function checkAnswer(selected, correct) {
+    const resultDiv = document.getElementById("quiz-result");
+    if (selected === correct) {
+        resultDiv.innerHTML = "<span style='color: #2ecc71;'>إجابة صحيحة! أحسنت.</span>";
+        score++;
+    } else {
+        resultDiv.innerHTML = `<span style='color: #e74c3c;'>إجابة خاطئة. الإجابة الصحيحة هي: ${correct}</span>`;
+    }
+
+    // الانتقال للسؤال التالي بعد ثانيتين لقراءة النتيجة
+    currentQuestionIndex++;
+    setTimeout(loadQuestion, 2000);
+}
