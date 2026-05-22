@@ -4,6 +4,10 @@ const lettersData = [
     { yezidi: "𐺁", kurmanji: "B", arabic: "باء", audio: "audio/letter_b.mp3" },
     { yezidi: "𐺂", kurmanji: "C", arabic: "جيم", audio: "audio/letter_c.mp3" },
     { yezidi: "𐺃", kurmanji: "Ç", arabic: "تشاء", audio: "audio/letter_ch.mp3" }
+  { yezidi: "𐺀", kurmanji: "A", arabic: "ألف", audio: "audio/letter_a.mp3" },
+    { yezidi: "𐺁", kurmanji: "B", arabic: "باء", audio: "audio/letter_b.mp3" },
+    { yezidi: "𐺂", kurmanji: "C", arabic: "جيم", audio: "audio/letter_c.mp3" },
+    { yezidi: "𐺃", kurmanji: "Ç", arabic: "تشاء", audio: "audio/letter_ch.mp3" }
     // يمكنك إضافة باقي الحروف هنا بنفس الترتيب
 ];
 
