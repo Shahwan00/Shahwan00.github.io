@@ -1,127 +1,100 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Yezidi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 
+@font-face {
+  font-family: 'Noto Serif Yezidi';
+  src: url('NotoSerifYezidi-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    color: #3c3c3c;
+  font-family: 'Cairo', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.duo-container {
-    width: 100%;
-    max-width: 500px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    box-sizing: border-box;
+.container {
+  text-align: center;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
 }
 
-/* شريط التقدم */
-.progress-bar-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.back-btn { font-size: 24px; color: #afafaf; cursor: pointer; }
-.progress-bar {
-    flex-grow: 1;
-    height: 16px;
-    background-color: #e5e5e5;
-    border-radius: 10px;
-    overflow: hidden;
-}
-.progress-fill {
-    width: 20%;
-    height: 100%;
-    background-color: #58cc02; /* أخضر دوليانغو */
-    transition: width 0.3s;
-}
-.score-board { font-weight: bold; color: #ffc107; font-size: 18px;}
-
-/* منطقة السؤال */
-.quiz-box {
-    text-align: center;
-    margin-y: auto;
-}
-.instruction { font-size: 22px; font-weight: bold; margin-bottom: 20px; }
-.#char-display،  {
-    font-size: 80px;
-    font-family: 'Noto Serif Yezidi', serif,
-    margin: 20px auto;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #e5e5e5;
-    border-radius: 24px;
-    box-shadow: 0 4px 0 #e5e5e5;
-}
-.audio-btn {
-    background-color: #1cb0f6;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 4px 0 #1899d6;
-}
-.audio-btn:active { transform: translateY(4px); box-shadow: none; }
-
-/* الخيارات */
-.options-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 20px;
-}
-.option-card {
-    border: 2px solid #e5e5e5;
-    border-radius: 16px;
-    padding: 15px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 0 #e5e5e5;
-    transition: all 0.1s;
-}
-.option-card:hover { background-color: #f7f7f7; }
-.option-card.selected {
-    border-color: #84d8ff;
-    background-color: #ddf4ff;
-    box-shadow: 0 4px 0 #84d8ff;
-    color: #1899d6;
+h1 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 20px;
 }
 
-/* الزر السفلي */
-.footer-check {
-    border-top: 2px solid #e5e5e5;
-    padding-top: 20px;
-    text-align: center;
+#char-display {
+  font-family: 'Noto Serif Yezidi', serif;
+  font-size: 96px;
+  margin: 20px 0;
+  min-height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  border: 2px dashed #ddd;
+  border-radius: 8px;
+  color: #2c3e50;
 }
-.check-btn {
-    width: 100%;
-    background-color: #58cc02;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 16px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 5px 0 #46a302;
+
+#char-name {
+  font-size: 18px;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+  min-height: 24px;
 }
-.check-btn:disabled {
-    background-color: #e5e5e5;
-    color: #afafaf;
-    box-shadow: none;
-    cursor: not-serif;
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+#prev-btn {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+#prev-btn:hover {
+  background-color: #c0392b;
+}
+
+#prev-btn:active {
+  transform: scale(0.98);
+}
+
+#next-btn {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+#next-btn:hover {
+  background-color: #27ae60;
+}
+
+#next-btn:active {
+  transform: scale(0.98);
 }
