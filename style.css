@@ -52,7 +52,7 @@ body {
 .instruction { font-size: 22px; font-weight: bold; margin-bottom: 20px; }
 .character-display {
     font-size: 80px;
-    font-family: 'Noto Serif Yezidi', serif;.
+    font-family: 'Noto Serif Yezidi', serif,
     margin: 20px auto;
     width: 150px;
     height: 150px;
