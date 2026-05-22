@@ -6,6 +6,47 @@ const questions = [
         answer: "أ",
         audio: "audio/a.mp3"
     },
+
+{
+    char: "𐺂",
+    options: ["أ", "ب", "ت", "ث"],
+    answer: "ڀ",
+    audio: "audio/c.mp3"
+},
+{
+    char: "𐺃",
+    options: ["أ", "ب", "ت", "ث"],
+    answer: "پ",
+    audio: "audio/d.mp3"
+},
+{
+    char: "𐺄",
+    options: ["أ", "ب", "ت", "ث"],
+    answer: "ت",
+    audio: "audio/e.mp3"
+},
+{
+    char: "𐺅",
+    options: ["أ", "ب", "ت", "ث"],
+    answer: "ز",
+    audio: "audio/f.mp3"
+},
+{
+    char: "𐺆",
+    options: ["أ", "ب", "ت", "ث"],
+    answer: "ج",
+    audio: "audio/g.mp3"
+},
+{
+    char: "𐺇",
+    options: ["أ", "ب", "ت", "ث"],
+    answer: "چ",
+    audio: "audio/h.mp3"
+}
+
+
+
+    
     {
         char: "𐺁", 
         options: ["أ", "ب", "ت", "ث"],
