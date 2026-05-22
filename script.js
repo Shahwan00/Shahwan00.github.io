@@ -1,99 +1,76 @@
-// مصفوفة البيانات: هنا نضع الحروف الإيزيدية ونطقها واسم ملف الصوت الخاص بها
 const quizData = [
-    { id: 1, char: "𐺀", answer: "ألف", audio: "audio/alif.mp3" },
-    { id: 2, char: "𐺁", answer: "باء", audio: "audio/baa.mp3" },
-    { id: 3, char: "𐺂", answer: "تـاء", audio: "audio/taa.mp3" }
-    // تستطيع إضافة كل الحروف الأبجدية هنا لاحقاً بنفس الطريقة
+    { audio: "a.mp3", correct: "أ" },
+    { audio: "b.mp3", correct: "ب" },
+    { audio: "t.mp3", correct: "ت" }
 ];
 
 let currentQuestionIndex = 0;
-let selectedAnswer = null;
 let score = 0;
-
-const charDisplay = document.getElementById("char-display");
+const audioPlayer = document.getElementById("audio-player");
 const optionsContainer = document.getElementById("options-container");
-const listenBtn = document.getElementById("listen-btn");
-const nextBtn = document.getElementById("next-btn");
-const progressBar = document.getElementById("progress");
-const scoreDisplay = document.getElementById("score");
+const nextButton = document.getElementById("next-btn");
+const scoreContainer = document.getElementById("score-container");
 
 function loadQuestion() {
-    selectedAnswer = null;
-    nextBtn.disabled = true;
-    nextBtn.innerText = "تحقق من الإجابة";
-    
-    let currentQuestion = quizData[currentQuestionIndex];
-    charDisplay.innerText = currentQuestion.char;
-    
-    // تحديث شريط التقدم
-    let progressPercent = ((currentQuestionIndex) / quizData.length) * 100;
-    progressBar.style.width = `${progressPercent}%`;
+    optionsContainer.innerHTML = "";
+    nextButton.style.display = "none";
 
-    // توليد خيارات (الإجابة الصحيحة + خيارات عشوائية)
-    let options = [currentQuestion.answer];
-    while(options.length < 4) {
-        let randomChar = quizData[Math.floor(Math.random() * quizData.length)].answer;
-        if(!options.includes(randomChar)) {
-            options.push(randomChar);
+    let currentQuestion = quizData[currentQuestionIndex];
+    audioPlayer.src = currentQuestion.audio;
+
+    // هنا تم تعديل الكود ليختار من الخيارات المتاحة فقط (3 خيارات) بدلاً من 4
+    let options = [currentQuestion.correct];
+    
+    while (options.length < quizData.length) {
+        let randomWord = quizData[Math.floor(Math.random() * quizData.length)].correct;
+        if (!options.includes(randomWord)) {
+            options.push(randomWord);
         }
     }
-    // خلط الخيارات عشوائياً
+
     options.sort(() => Math.random() - 0.5);
 
-    // عرض الخيارات في الواجهة
-    optionsContainer.innerHTML = "";
-    options.forEach(opt => {
-        const card = document.createElement("div");
-        card.className = "option-card";
-        card.innerText = opt;
-        card.onclick = () => selectOption(card, opt);
-        optionsContainer.appendChild(card);
+    options.forEach(option => {
+        const button = document.createElement("button");
+        button.innerText = option;
+        button.classList.add("option-btn");
+        button.onclick = () => checkAnswer(button, option, currentQuestion.correct);
+        optionsContainer.appendChild(button);
     });
 }
 
-function selectOption(card, option) {
-    // إزالة التحديد عن الباقي
-    document.querySelectorAll(".option-card").forEach(c => c.classList.remove("selected"));
-    // تحديد الكرت الحالي
-    card.classList.add("selected");
-    selectedAnswer = option;
-    nextBtn.disabled = false; // تفعيل زر التحقق
+function checkAnswer(button, selected, correct) {
+    const buttons = document.querySelectorAll(".option-btn");
+    buttons.forEach(btn => btn.disabled = true);
+
+    if (selected === correct) {
+        button.classList.add("correct");
+        score++;
+    } else {
+        button.classList.add("wrong");
+        buttons.forEach(btn => {
+            if (btn.innerText === correct) {
+                btn.classList.add("correct");
+            }
+        });
+    }
+    nextButton.style.display = "block";
 }
 
-// تشغيل الصوت عند الضغط على زر الاستماع
-listenBtn.onclick = () => {
-    let currentQuestion = quizData[currentQuestionIndex];
-    let audio = new Audio(currentQuestion.audio);
-    audio.play().catch(e => console.log("خطأ في تشغيل الصوت: تأكد من رفع الملف داخل مجلد audio وباسم صحيح"));
-};
-
-// عند الضغط على زر التحقق / التالي
-nextBtn.onclick = () => {
-    let currentQuestion = quizData[currentQuestionIndex];
-    
-    if (nextBtn.innerText === "تحقق من الإجابة") {
-        if (selectedAnswer === currentQuestion.answer) {
-            score += 10;
-            scoreDisplay.innerText = score;
-            alert("إجابة صحيحة! 🎉");
-        } else {
-            alert(`إجابة خاطئة! الإجابة الصحيحة هي: ${currentQuestion.answer} ❌`);
-        }
-        nextBtn.innerText = "الحرف التالي ➔";
+nextButton.onclick = () => {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < quizData.length) {
+        loadQuestion();
     } else {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < quizData.length) {
-            loadQuestion();
-        } else {
-            progressBar.style.width = "100%";
-            alert(`أحسنت! أنهيت الكويز بنجاح. مجموع نقاطك: ${score} ⭐`);
-            currentQuestionIndex = 0;
-            score = 0;
-            scoreDisplay.innerText = score;
-            loadQuestion();
-        }
+        showResults();
     }
 };
 
-// تشغيل السؤال الأول عند فتح الصفحة
+function showResults() {
+    document.getElementById("quiz-container").style.display = "none";
+    scoreContainer.innerHTML = `<h3>انتهى الاختبار!</h3><p>درجتك هي: ${score} من ${quizData.length}</p>`;
+    scoreContainer.style.display = "block";
+}
+
+// تشغيل السؤال الأول عند تحميل الصفحة
 loadQuestion();
