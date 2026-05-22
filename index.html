@@ -3,30 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعلم الأبجدية الإيزيدية القديمة</title>
+    <title>تعلم الأبجدية الأيزيدية القديمة</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="duo-container">
         <div class="progress-bar-container">
-            <div class="back-btn">✕</div>
+            <div class="back-btn">×</div>
             <div class="progress-bar">
                 <div class="progress-fill" id="progress"></div>
             </div>
-            <div class="score-board">⭐ <span id="score">0</span></div>
+            <div class="score-board"><span>النتيجة</span>: <span id="score">0</span></div>
         </div>
 
         <div class="quiz-box">
             <h2 class="instruction">ما هو نطق هذا الحرف الإيزيدي؟</h2>
-            
-            <div class="character-display" id="char-display">
-                𐺀 </div>
+            <div class="character-display" id="char-display"></div>
 
-            <button class="audio-btn" id="listen-btn">🔊 استمع للنطق</button>
+            <audio id="audio-player"></audio>
+
+            <button class="audio-btn" id="listen-btn">استمع للنطق</button>
         </div>
 
-        <div class="options-grid" id="options-container">
-            </div>
+        <div class="options-grid" id="options-container"></div>
 
         <div class="footer-check">
             <button class="check-btn" id="next-btn" disabled>تحقق من الإجابة</button>
