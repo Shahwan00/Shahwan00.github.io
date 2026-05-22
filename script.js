@@ -1,7 +1,7 @@
 const quizData = [
-    { audio: "a.mp3", correct: "أ" },
-    { audio: "b.mp3", correct: "ب" },
-    { audio: "t.mp3", correct: "ت" }
+    { audio: "audio/a.mp3", correct: "أ" },
+    { audio: "audio/b.mp3", correct: "ب" },
+    { audio: "audio/t.mp3", correct: "ت" }
 ];
 
 let currentQuestionIndex = 0;
@@ -18,7 +18,6 @@ function loadQuestion() {
     let currentQuestion = quizData[currentQuestionIndex];
     audioPlayer.src = currentQuestion.audio;
 
-    // هنا تم تعديل الكود ليختار من الخيارات المتاحة فقط (3 خيارات) بدلاً من 4
     let options = [currentQuestion.correct];
     
     while (options.length < quizData.length) {
