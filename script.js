@@ -1,160 +1,43 @@
-// مصفوفة الأسئلة (تأكد من وجود الملفات داخل مجلد audio بنفس الأسماء)
 const questions = [
-    {
-        char: "𐺀", // مثال لحرف إيزيدي
-        options: ["أ", "ب", "ت", "ث"],
-        answer: "أ",
-        audio: "audio/a.mp3"
-    },
-
-{
-    char: "𐺂",
-    options: ["أ", "ب", "ت", "ث"],
-    answer: "ڀ",
-    audio: "audio/c.mp3"
-},
-{
-    char: "𐺃",
-    options: ["أ", "ب", "ت", "ث"],
-    answer: "پ",
-    audio: "audio/d.mp3"
-},
-{
-    char: "𐺄",
-    options: ["أ", "ب", "ت", "ث"],
-    answer: "ت",
-    audio: "audio/e.mp3"
-},
-{
-    char: "𐺅",
-    options: ["أ", "ب", "ت", "ث"],
-    answer: "ز",
-    audio: "audio/f.mp3"
-},
-{
-    char: "𐺆",
-    options: ["أ", "ب", "ت", "ث"],
-    answer: "ج",
-    audio: "audio/g.mp3"
-},
-{
-    char: "𐺇",
-    options: ["أ", "ب", "ت", "ث"],
-    answer: "چ",
-    audio: "audio/h.mp3"
-}
-
-
-
-    
-    {
-        char: "𐺁", 
-        options: ["أ", "ب", "ت", "ث"],
-        answer: "ب",
-        audio: "audio/b.mp3"
-    }
-    // يمكنك إضافة باقي الحروف هنا بنفس الطريقة
+    { char: "𐺀", options: ["أ", "ب", "ت", "ث"], answer: "أ", audio: "audio/1.mp3" },
+    { char: "𐺁", options: ["ب", "پ", "ت", "ث"], answer: "ب", audio: "audio/2.mp3" },
+    { char: "𐺂", options: ["ت", "ث", "ج", "پ"], answer: "پ", audio: "audio/3.mp3" },
+    { char: "𐺃", options: ["ح", "خ", "ث", "ج"], answer: "ث", audio: "audio/4.mp3" },
+    { char: "𐺄", options: ["ج", "د", "ذ", "ر"], answer: "ج", audio: "audio/5.mp3" },
+    { char: "𐺅", options: ["ز", "س", "ش", "ح"], answer: "ح", audio: "audio/6.mp3" },
+    { char: "𐺆", options: ["ص", "ض", "ط", "خ"], answer: "خ", audio: "audio/7.mp3" },
+    { char: "𐺇", options: ["ع", "غ", "ف", "د"], answer: "د", audio: "audio/8.mp3" },
+    { char: "𐺈", options: ["ق", "ك", "ل", "ذ"], answer: "ذ", audio: "audio/9.mp3" },
+    { char: "𐺉", options: ["م", "ن", "هـ", "ر"], answer: "ر", audio: "audio/10.mp3" },
+    { char: "𐺊", options: ["و", "ي", "ز", "أ"], answer: "ز", audio: "audio/11.mp3" },
+    { char: "𐺋", options: ["ب", "ت", "ث", "ژ"], answer: "ژ", audio: "audio/12.mp3" },
+    { char: "𐺌", options: ["س", "ش", "ص", "ض"], answer: "س", audio: "audio/13.mp3" },
+    { char: "𐺍", options: ["ط", "ظ", "ع", "ش"], answer: "ش", audio: "audio/14.mp3" },
+    { char: "𐺎", options: ["غ", "ف", "ق", "ص"], answer: "ص", audio: "audio/15.mp3" },
+    { char: "𐺏", options: ["ك", "ل", "م", "ض"], answer: "ض", audio: "audio/16.mp3" },
+    { char: "𐺐", options: ["ن", "هـ", "و", "ط"], answer: "ط", audio: "audio/17.mp3" },
+    { char: "𐺑", options: ["ي", "أ", "ب", "ظ"], answer: "ظ", audio: "audio/18.mp3" },
+    { char: "𐺒", options: ["ت", "ث", "ج", "ع"], answer: "ع", audio: "audio/19.mp3" },
+    { char: "𐺓", options: ["ح", "خ", "د", "غ"], answer: "غ", audio: "audio/20.mp3" },
+    { char: "𐺔", options: ["ذ", "ر", "ز", "ف"], answer: "ف", audio: "audio/21.mp3" },
+    { char: "𐺕", options: ["س", "ش", "ص", "ڤ"], answer: "ڤ", audio: "audio/22.mp3" },
+    { char: "𐺖", options: ["ض", "ط", "ظ", "ق"], answer: "ق", audio: "audio/23.mp3" },
+    { char: "𐺗", options: ["ع", "غ", "ف", "ك"], answer: "ك", audio: "audio/24.mp3" },
+    { char: "𐺘", options: ["ق", "ك", "ل", "گ"], answer: "گ", audio: "audio/25.mp3" },
+    { char: "𐺙", options: ["م", "ن", "هـ", "ل"], answer: "ل", audio: "audio/26.mp3" },
+    { char: "𐺚", options: ["و", "ي", "أ", "م"], answer: "م", audio: "audio/27.mp3" },
+    { char: "𐺛", options: ["ب", "ت", "ث", "ن"], answer: "ن", audio: "audio/28.mp3" },
+    { char: "𐺜", options: ["ج", "ح", "خ", "و"], answer: "و", audio: "audio/29.mp3" },
+    { char: "𐺝", options: ["د", "ذ", "ر", "هـ"], answer: "هـ", audio: "audio/30.mp3" },
+    { char: "𐺞", options: ["ز", "س", "ش", "هـا"], answer: "هـا", audio: "audio/31.mp3" },
+    { char: "𐺟", options: ["ص", "ض", "ط", "ي"], answer: "ي", audio: "audio/32.mp3" },
+    { char: "𐺠", options: ["ظ", "ع", "غ", "يـ ممدودة"], answer: "يـ ممدودة", audio: "audio/33.mp3" },
+    { char: "𐺡", options: ["ف", "ق", "ك", "خـ مفخمة"], answer: "خـ مفخمة", audio: "audio/34.mp3" },
+    { char: "𐺢", options: ["ل", "م", "ن", "حـ مفخمة"], answer: "حـ مفخمة", audio: "audio/35.mp3" },
+    { char: "𐺣", options: ["هـ", "و", "ي", "كاف مقلوبة"], answer: "كاف مقلوبة", audio: "audio/36.mp3" },
+    { char: "𐺤", options: ["أ", "ب", "ت", "تش"], answer: "تش", audio: "audio/37.mp3" },
+    { char: "𐺥", options: ["ث", "ج", "ح", "ج مجهورة"], answer: "ج مجهورة", audio: "audio/38.mp3" },
+    { char: "𐺦", options: ["خ", "د", "ذ", "شين مضاعفة"], answer: "شين مضاعفة", audio: "audio/39.mp3" },
+    { char: "𐺧", options: ["ر", "ز", "س", "واو ممدودة"], answer: "واو ممدودة", audio: "audio/40.mp3" },
+    { char: "𐺨", options: ["ص", "ض", "ط", "لام مفخمة"], answer: "لام مفخمة", audio: "audio/41.mp3" }
 ];
-
-let currentQuestionIndex = 0;
-let score = 0;
-let selectedOption = null;
-
-// استدعاء عناصر HTML
-const charDisplay = document.getElementById("char-display");
-const optionsContainer = document.getElementById("options-container");
-const listenBtn = document.getElementById("listen-btn");
-const nextBtn = document.getElementById("next-btn");
-const scoreDisplay = document.getElementById("score");
-const progressFill = document.getElementById("progress");
-const audioPlayer = document.getElementById("audio-player");
-
-// دالة بدء وعرض السؤال
-function loadQuestion() {
-    selectedOption = null;
-    nextBtn.disabled = true;
-    nextBtn.innerText = "تحقق من الإجابة";
-    optionsContainer.innerHTML = "";
-
-    let currentQuestion = questions[currentQuestionIndex];
-    charDisplay.innerText = currentQuestion.char;
-
-    // تحديث شريط التقدم
-    let progressPercent = ((currentQuestionIndex) / questions.length) * 100;
-    progressFill.style.width = `${progressPercent}%`;
-
-    // إنشاء أزرار الخيارات
-    currentQuestion.options.forEach(option => {
-        const button = document.createElement("button");
-        button.className = "option-btn";
-        button.innerText = option;
-        button.onclick = () => selectOption(button, option);
-        optionsContainer.appendChild(button);
-    });
-}
-
-// دالة اختيار إجابة
-function selectOption(button, option) {
-    const buttons = document.querySelectorAll(".option-btn");
-    buttons.forEach(btn => btn.classList.remove("selected"));
-    
-    button.classList.add("selected");
-    selectedOption = option;
-    nextBtn.disabled = false;
-}
-
-// تشغيل الصوت عند الضغط على زر الاستماع
-listenBtn.onclick = () => {
-    let currentQuestion = questions[currentQuestionIndex];
-    
-    if (currentQuestion && currentQuestion.audio) {
-        // نربط مصدر الصوت بالملف المطلوب
-        audioPlayer.src = currentQuestion.audio;
-        
-        // تشغيل الصوت ومسك الخطأ إن وجد
-        audioPlayer.play().catch(error => {
-            console.error("خطأ في تشغيل الصوت:", error);
-            alert("تعذر تشغيل الصوت. تأكد من مسار الملف واسمه في مجلد audio");
-        });
-    }
-};
-
-// زر التحقق والانتقال للسؤال التالي
-nextBtn.onclick = () => {
-    let currentQuestion = questions[currentQuestionIndex];
-
-    if (nextBtn.innerText === "تحقق من الإجابة") {
-        const buttons = document.querySelectorAll(".option-btn");
-        
-        buttons.forEach(btn => {
-            if (btn.innerText === currentQuestion.answer) {
-                btn.classList.add("correct");
-            }
-            if (btn.classList.contains("selected") && btn.innerText !== currentQuestion.answer) {
-                btn.classList.add("wrong");
-            }
-        });
-
-        if (selectedOption === currentQuestion.answer) {
-            score += 10;
-            scoreDisplay.innerText = score;
-        }
-
-        nextBtn.innerText = "السؤال التالي";
-    } else {
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-            loadQuestion();
-        } else {
-            // نهاية الاختبار
-            progressFill.style.width = "100%";
-            charDisplay.innerText = "🎉";
-            optionsContainer.innerHTML = `<h3>أحسنت! أكملت الاختبار بنتيجة: ${score}</h3>`;
-            listenBtn.style.display = "none";
-            nextBtn.style.display = "none";
-        }
-    }
-};
-
-// تشغيل أول سؤال عند تحميل الصفحة
-window.onload = loadQuestion;
