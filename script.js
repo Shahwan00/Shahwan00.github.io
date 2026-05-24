@@ -37,7 +37,7 @@ const lettersData = [
     
     { yezidi: "𐺣𐺣", kurmanji: "Û", arabic: "واو ممدودة", audio: "audio/uu.mp3" },
     { yezidi: "𐺤", kurmanji: "W", arabic: "واو (W)", audio: "audio/w.mp3" },
-    { yezidi: "𐺦", kurmanji: "O", arabic: "واو تفخيم (O)", audio: "audio/o.mp3" },
+    { yezidi: "𐺥", kurmanji: "O", arabic: "ۆ (O)", audio: "audio/o.mp3" },
     { yezidi: "𐺧", kurmanji: "E", arabic: "فتحة / ألف قصيرة", audio: "audio/e.mp3" },
     { yezidi: "𐺨", kurmanji: "H", arabic: "هاء", audio: "audio/ha.mp3" },
     { yezidi: "𐺩", kurmanji: "Y", arabic: "ياء", audio: "audio/y.mp3" },
@@ -49,7 +49,7 @@ const lettersData = [
 const wordsData = [
     { yezidi: "𐺀𐺁", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
     { yezidi: "𐺃𐺁", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
-    { yezidi: "𐺁𐺀𐺁", kurmanji: "Bav", arabic: "أب", audio: "audio/word_bav.mp3" }
+    { yezidi: "𐺁𐺀𐺁", kurmanji: "Bab", arabic: "أب", audio: "audio/word_bav.mp3" }
 ];
 
 // المتغيرات الخاصة بالاختبار الأكاديمي
