@@ -12,15 +12,15 @@ const lettersData = [
     { yezidi: "𐺉", kurmanji: "H'", arabic: "حاء", audio: "audio/h.mp3" },
     { yezidi: "𐺊", kurmanji: "X", arabic: "خاء", audio: "audio/x.mp3" },
     { yezidi: "𐺋", kurmanji: "D", arabic: "دال", audio: "audio/d.mp3" },
-    { yezidi: "𐺌", kurmanji: "Z", arabic: "ذال", audio: "audio/z.mp3" },
+    { yezidi: "𐺏", kurmanji: "Z", arabic: "ذال", audio: "audio/z.mp3" },
     { yezidi: "𐺍", kurmanji: "R", arabic: "راء مخففة", audio: "audio/r.mp3" },
     { yezidi: "𐺎", kurmanji: "R'", arabic: "راء مفخمة", audio: "audio/rh.mp3" },
-    { yezidi: "𐺏", kurmanji: "Z", arabic: "زاء", audio: "audio/za.mp3" },
+
     { yezidi: "𐺐", kurmanji: "J", arabic: "جيم خفيفة (ژ)", audio: "audio/je.mp3" },
     { yezidi: "𐺑", kurmanji: "S", arabic: "سين", audio: "audio/sin.mp3" },
     { yezidi: "𐺒", kurmanji: "Sh", arabic: "شين", audio: "audio/sh.mp3" },
-    { yezidi: "𐺓", kurmanji: "S'", arabic: "صاد", audio: "audio/sad.mp3" },
-    { yezidi: "𐺔", kurmanji: "D", arabic: "ضاد", audio: "audio/dad.mp3" },
+
+
     { yezidi: "𐺕", kurmanji: "T", arabic: "طاء", audio: "audio/ta.mp3" },
     { yezidi: "𐺖", kurmanji: "Z'", arabic: "ظاء", audio: "audio/ze.mp3" },
     { yezidi: "𐺗", kurmanji: "E'", arabic: "عين", audio: "audio/eyn.mp3" },
@@ -42,7 +42,6 @@ const lettersData = [
     { yezidi: "𐺧", kurmanji: "E", arabic: "فتحة / ألف قصيرة", audio: "audio/e.mp3" },
     { yezidi: "𐺨", kurmanji: "H", arabic: "هاء", audio: "audio/ha.mp3" },
     { yezidi: "𐺩", kurmanji: "Y", arabic: "ياء", audio: "audio/y.mp3" },
-    { yezidi: "𐺪", kurmanji: "Ê", arabic: "ياء ممدودة", audio: "audio/ee.mp3" },
     { yezidi: "𐺰", kurmanji: "Ł", arabic: "لام مفخمة (تاريخية)", audio: "audio/lam_dot.mp3" },
     { yezidi: "𐺱", kurmanji: "Ê", arabic: "ياء بحركات تاريخية", audio: "audio/yot_circumflex.mp3" }
 ];
