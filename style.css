@@ -186,6 +186,7 @@ button {
     margin-bottom: 10px;
 }
 
+
 /* تنسيق حجم الصور (اللوجو والعلم) ليظهروا بشكل متناسق ومستدير إذا لزم الأمر */
 .header-logo-right img, 
 .header-logo-left img {
@@ -194,3 +195,10 @@ button {
     object-fit: contain;
 }
 
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column; /* تحويل الترتيب عمودياً للشاشات الصغيرة */
+        text-align: center;
+        gap: 15px;
+    }
+}
