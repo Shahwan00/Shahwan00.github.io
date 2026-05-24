@@ -106,7 +106,7 @@ body {
 .grid-container {
     display: grid;
     /* للموبايل: يسمح بظهور 3 إلى 4 أعمدة لأن أقل عرض للكارت أصبح 80 بكسل */
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
     gap: 12px;
     margin: 20px 0;
 }
