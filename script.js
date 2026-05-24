@@ -19,7 +19,7 @@ const lettersData = [
     { yezidi: "𐺑", kurmanji: "S", arabic: "سين", audio: "audio/sin.mp3" },
     { yezidi: "𐺒", kurmanji: "Sh", arabic: "شين", audio: "audio/sh.mp3" },
     { yezidi: "𐺕", kurmanji: "T", arabic: "طاء", audio: "audio/ta.mp3" },
-    { yezidi: "𐺖", kurmanji: "Z'", arabic: "ظاء", audio: "audio/ze.mp3" },
+
     { yezidi: "𐺗", kurmanji: "E'", arabic: "عين", audio: "audio/eyn.mp3" },
     { yezidi: "𐺘", kurmanji: "X'", arabic: "غين", audio: "audio/xheyn.mp3" },
     { yezidi: "𐺙", kurmanji: "F", arabic: "فاء", audio: "audio/f.mp3" },
@@ -47,8 +47,8 @@ const lettersData = [
 
 // 2. قاعدة بيانات الكلمات الأصلية (لم يتم تغييرها)
 const wordsData = [
-    { yezidi: "𐺀𐺁", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
-    { yezidi: "𐺃𐺁", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
+    { yezidi: "𐺀𐺛", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
+    { yezidi: "𐺈𐺀𐺛", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
     { yezidi: "𐺁𐺀𐺁", kurmanji: "Bab", arabic: "أب", audio: "audio/word_bav.mp3" }
 ];
 
