@@ -208,20 +208,9 @@ function checkAnswer(selected, correct) {
     setTimeout(loadQuestion, 2000);
 }
 
- function toggleMenu() {
-    var menu = document.getElementById("sideMenu");
-    
-    // إذا كانت القائمة مغلقة (عرضها صفر)، افتحها واجعل عرضها 250 بكسل في جانب الشاشة
-    if (menu.style.width === "250px") {
-        menu.style.width = "0";
-    } else {
-        menu.style.width = "250px";
+ function toggleSidebar(open) {
+    const sidebar = document.getElementById("mySidebar");
+    if (sidebar) {
+        sidebar.style.width = open ? "280px" : "0";
     }
 }
-
-// إغلاق القائمة تلقائياً عند الضغط على أي رابط بداخلها
-document.querySelectorAll('.side-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.getElementById("sideMenu").style.width = "0";
-    });
-});
