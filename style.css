@@ -9,17 +9,14 @@
 }
 
 body {
-  font-family: 'Cairo', sans-serif;
-  background-color: #f4f4f9;
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+    font-family: 'Cairo', sans-serif; /* أو اسم الخط الذي تستخدمه */
+    margin: 0;
+    padding: 0;
+    background-color: #f7fafc;
+    min-height: 100vh;
+    direction: rtl; /* لضمان اتجاه النص العربي الصحيح */
 }
 
-.container {
   text-align: center;
   background-color: #fff;
   padding: 30px;
