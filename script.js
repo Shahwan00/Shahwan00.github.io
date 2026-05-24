@@ -85,7 +85,7 @@ function switchSection(targetSectionId) {
 
 // أزرار التنقل الأساسية
 function goToHome() {
-    switchSection("main-section"); // الصفحة الرئيسية (المترجم)
+    switchSection("letters-section"); // الصفحة الرئيسية (المترجم)
 }
 
 function goToLetters() {
