@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تعلم اللغة الإيزيدية</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         /* إعدادات الخطوط والتنسيق العام */
-                @font-face {
+        @font-face {
             font-family: 'YezidiFont';
             src: url('NotoSerifYezidi-VariableFont_wght.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
-                }
-        
+        }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -31,23 +31,6 @@
             border-radius: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-
-        <header class="main-header">
-    <div class="header-logo-right">
-        <img src="./images/IMG_20260429_211917_056.jpg" alt="Logo">
-    </div>
-
-    <div class="header-text-center">
-        <h1>برنامج تعلم اللغة الإيزيدية</h1>
-        <h2>المرحلة الأولى: تعلّم الحروف</h2>
-        <p>اضغط على الحرف للاستماع إلى نطق الصحيح:</p>
-    </div>
-
-    <div class="header-logo-left">
-    ​<img src="Images/images.jpeg" alt="Flag">
-    </div>
-</header>
-
 
         .section.active {
             display: block;
@@ -146,30 +129,35 @@
 
     <div class="container">
 
-    
+        <header class="main-header">
+            <div class="header-logo-right">
+                <img src="images/IMG_20260429_211917_056.jpg" alt="Logo">
+            </div>
 
+            <div class="header-text-center">
+                <h1>برنامج تعلم اللغة الإيزيدية</h1>
+                <h2>المرحلة الأولى: تعلّم الحروف</h2>
+                <p>اضغط على الحرف للاستماع إلى النطق الصحيح:</p>
+            </div>
 
-        
-        
- 
-
-        <h1>برنامج تعلم اللغة الإيزيدية</h1>
+            <div class="header-logo-left">
+                <img src="images/images.jpeg" alt="Flag">
+            </div>
+        </header>
 
         <div id="letters-section" class="section active">
-            <h2>المرحلة الأولى: تعلّم الحروف</h2>
-            <p>اضغط على الحرف للاستماع إلى نطقة الصحيح:</p>
             <div class="grid-container" id="letters-grid"></div>
             <button class="btn" onclick="goToWords()">الانتقال إلى الكلمات ←</button>
         </div>
 
-        <div id="words-section" class="section">
+        <div id="words-section" class="section" style="display:none;">
             <h2>المرحلة الثانية: تعلّم الكلمات</h2>
             <p>اضغط على الكلمة للاستماع إلى نطقها:</p>
             <div class="grid-container" id="words-grid"></div>
             <button class="btn" onclick="goToQuiz()">الانتقال إلى الاختبار ←</button>
         </div>
 
-        <div id="quiz-section" class="section">
+        <div id="quiz-section" class="section" style="display:none;">
             <h2>المرحلة الثالثة: الاختبار (Test)</h2>
             <div class="quiz-container">
                 <p id="quiz-question" style="font-size: 20px; font-weight: bold;"></p>
