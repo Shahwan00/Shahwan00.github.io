@@ -43,21 +43,20 @@ const lettersData = [
     { yezidi: "𐺱", kurmanji: "Ê", arabic: "ياء بحركات تاريخية", audio: "audio/yot_circumflex.mp3" }
 ];
 
-// 2. قاعدة بيانات الكلمات
+// 2. قاعدة بيانات الكلمات الأصلية (لم يتم تغييرها)
 const wordsData = [
     { yezidi: "𐺀𐺁", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
     { yezidi: "𐺃𐺁", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
     { yezidi: "𐺁𐺀𐺁", kurmanji: "Bav", arabic: "أب", audio: "audio/word_bav.mp3" }
 ];
 
-// المتغيرات الخاصة بالاختبار والتنقل
+// المتغيرات الخاصة بالاختبار الأكاديمي
 let currentQuestionIndex = 0;
 let score = 0;
-let quizTimeout = null; // لإدارة وقت الانتقال بين الأسئلة لمنع التداخل عند الرجوع
 
-// تشغيل الدالة عند تحميل الصفحة لبناء واجهة الحروف الرئيسية
+// تشغيل الدالة عند تحميل الصفحة لبناء واجهة الحروف
 document.addEventListener("DOMContentLoaded", () => {
-    goToHome(); // إظهار الصفحة الرئيسية تلقائياً عند البدء
+    renderLetters();
 });
 
 // وظيفة تشغيل الصوت الموحدة
@@ -66,18 +65,57 @@ function playSound(audioSrc) {
     audio.play().catch(err => console.log("ملف الصوت غير موجود بعد: ", audioSrc));
 }
 
-// دالة العودة للرئيسية (الحروف)
+// دالة عامة لإخفاء جميع الأقسام وإظهار القسم المطلوب فقط
+function switchSection(targetSectionId) {
+    const sections = ["main-section", "letters-section", "words-section", "quiz-section", "info-section", "errors-section"];
+    sections.forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.classList.remove("active");
+        }
+    });
+    
+    const target = document.getElementById(targetSectionId);
+    if (target) {
+        target.classList.add("active");
+    }
+}
+
+// أزرار التنقل الأساسية
 function goToHome() {
-    clearTimeout(quizTimeout); // إيقاف أي انتقال تلقائي للأسئلة في الخلفية
-    document.getElementById("words-section").classList.remove("active");
-    document.getElementById("quiz-section").classList.remove("active");
-    document.getElementById("letters-section").classList.add("active");
+    switchSection("main-section"); // الصفحة الرئيسية (المترجم)
+}
+
+function goToLetters() {
+    switchSection("letters-section");
     renderLetters();
+}
+
+function goToWords() {
+    switchSection("words-section");
+    renderWords();
+}
+
+function goToQuiz() {
+    switchSection("quiz-section");
+    currentQuestionIndex = 0;
+    score = 0;
+    loadQuestion();
+}
+
+function goToErrors() {
+    switchSection("errors-section");
+}
+
+// دالة لعرض معلومات التطبيق عند الضغط على "معلومات" في القائمة
+function showAppInfo() {
+    switchSection("info-section");
 }
 
 // عرض الحروف في الصفحة
 function renderLetters() {
     const grid = document.getElementById("letters-grid");
+    if (!grid) return;
     grid.innerHTML = "";
     lettersData.forEach(item => {
         const card = document.createElement("div");
@@ -92,18 +130,10 @@ function renderLetters() {
     });
 }
 
-// الانتقال إلى مرحلة الكلمات
-function goToWords() {
-    clearTimeout(quizTimeout);
-    document.getElementById("letters-section").classList.remove("active");
-    document.getElementById("quiz-section").classList.remove("active");
-    document.getElementById("words-section").classList.add("active");
-    renderWords();
-}
-
 // عرض الكلمات في الصفحة
 function renderWords() {
     const grid = document.getElementById("words-grid");
+    if (!grid) return;
     grid.innerHTML = "";
     wordsData.forEach(item => {
         const card = document.createElement("div");
@@ -118,16 +148,6 @@ function renderWords() {
     });
 }
 
-// الانتقال إلى مرحلة الاختبار (تصفير العداد والنتيجة عند البدء من جديد)
-function goToQuiz() {
-    currentQuestionIndex = 0;
-    score = 0;
-    document.getElementById("letters-section").classList.remove("active");
-    document.getElementById("words-section").classList.remove("active");
-    document.getElementById("quiz-section").classList.add("active");
-    loadQuestion();
-}
-
 // تحميل سؤال الاختبار
 function loadQuestion() {
     const questionText = document.getElementById("quiz-question");
@@ -135,36 +155,33 @@ function loadQuestion() {
     const optionsGrid = document.getElementById("quiz-options");
     const resultDiv = document.getElementById("quiz-result");
 
+    if (!questionText || !wordDisplay || !optionsGrid || !resultDiv) return;
+
     resultDiv.innerHTML = "";
     optionsGrid.innerHTML = "";
 
     if (currentQuestionIndex >= wordsData.length) {
         questionText.innerHTML = "أحسنت! لقد أكملت الاختبار بنجاح.";
-        wordDisplay.innerHTML = `النتيجة النهائية: ${score} من ${wordsData.length}`;
+        wordDisplay.innerHTML = `النتيجة: ${score} من ${wordsData.length}`;
         return;
     }
 
     const currentWord = wordsData[currentQuestionIndex];
-    questionText.innerHTML = `السؤال ${currentQuestionIndex + 1}: ما معنى هذه الكلمة؟`;
+    questionText.innerHTML = "ما معنى هذه الكلمة؟";
     wordDisplay.innerHTML = currentWord.yezidi;
 
-    // تشغيل صوت الكلمة تلقائياً عند ظهور السؤال بمثابة مساعدة
     playSound(currentWord.audio);
 
-    // إنشاء خيارات الإجابة (الإجابة الصحيحة + خيارات عشوائية خاطئة)
     let options = [currentWord.arabic];
     
-    // جلب خيارات خاطئة من الكلمات الأخرى لتنويع الاختبار
     wordsData.forEach(w => {
         if (w.arabic !== currentWord.arabic && options.length < 4) {
             options.push(w.arabic);
         }
     });
 
-    // خلط الخيارات عشوائياً ليصبح الاختبار حقيقياً
     options.sort(() => Math.random() - 0.5);
 
-    // عرض أزرار الخيارات
     options.forEach(option => {
         const btn = document.createElement("button");
         btn.className = "option-btn";
@@ -177,20 +194,15 @@ function loadQuestion() {
 // التحقق من الإجابة
 function checkAnswer(selected, correct) {
     const resultDiv = document.getElementById("quiz-result");
-    
-    // تعطيل الأزرار بعد الاختيار لمنع الضغط المتكرر
-    const buttons = document.querySelectorAll(".option-btn");
-    buttons.forEach(btn => btn.disabled = true);
+    if (!resultDiv) return;
 
     if (selected === correct) {
-        resultDiv.innerHTML = "<span style='color: #2ecc71; font-weight: bold;'>إجابة صحيحة! أحسنت.</span>";
+        resultDiv.innerHTML = "<span style='color: #2ecc71;'>إجابة صحيحة! أحسنت.</span>";
         score++;
     } else {
-        resultDiv.innerHTML = `<span style='color: #e74c3c; font-weight: bold;'>إجابة خاطئة. الإجابة الصحيحة هي: ${correct}</span>`;
+        resultDiv.innerHTML = `<span style='color: #e74c3c;'>إجابة خاطئة. الإجابة الصحيحة هي: ${correct}</span>`;
     }
 
-    // الانتقال للسؤال التالي بعد ثانيتين لقراءة النتيجة
     currentQuestionIndex++;
-    quizTimeout = setTimeout(loadQuestion, 2000);
+    setTimeout(loadQuestion, 2000);
 }
-
