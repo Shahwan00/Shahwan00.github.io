@@ -122,50 +122,38 @@ button {
     z-index: 1000;
 }
 
-/* تنسيق القائمة الجانبية المخفية */
-.side-menu {
+.sidebar {
     height: 100%;
-    width: 0; /* تبدأ بعرض صفر لكي تكون مخفية تماماً */
+    width: 0;
     position: fixed;
-    z-index: 1001;
+    z-index: 1000;
     top: 0;
-    right: 0; /* لتظهر في جناح الشاشة الأيمن */
-    background-color: #111; /* لون خلفية داكن ومميز للقائمة */
+    left: 0;
+    background-color: #fff;
     overflow-x: hidden;
-    transition: 0.4s; /* سرعة حركة ظهور واختفاء القائمة */
+    transition: 0.5s;
     padding-top: 60px;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
 }
 
-/* تنسيق الروابط داخل القائمة */
-.side-menu a {
-    padding: 12px 24px;
+.sidebar a {
+    padding: 15px 25px;
     text-decoration: none;
     font-size: 18px;
-    color: #818181;
+    color: #333;
     display: block;
     transition: 0.3s;
-    text-align: right; /* لتتناسب مع اللغة العربية */
+    text-align: right;
 }
 
-/* تغيير لون الرابط عند مرور الماوس عليه */
-.side-menu a:hover {
-    color: #f1f1f1;
-    background-color: #222;
+.sidebar a:hover {
+    background-color: #f1f1f1;
 }
 
-/* تنسيق زر الإغلاق (X) داخل القائمة */
-.side-menu .close-btn {
+.sidebar .closebtn {
     position: absolute;
     top: 10px;
-    left: 20px; /* يضع زر X في جهة اليسار داخل القائمة */
+    right: 25px;
     font-size: 36px;
-    background: none;
-    border: none;
-    color: #818181;
-    cursor: pointer;
-}
-
-.side-menu .close-btn:hover {
-    color: #f1f1f1;
+    color: #333;
 }
