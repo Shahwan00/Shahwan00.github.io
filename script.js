@@ -1,8 +1,8 @@
 // 1. قاعدة بيانات الحروف (الرمز اليزيدي، الترجمة بالكورمانجية والعربية، واسم ملف الصوت)
 const lettersData = [
-    { yezidi: "𐺀", kurmanji: "A", arabic: "ألف", audio: "audio/a.mp3" }, // تم التصحيح
-    { yezidi: "𐺁", kurmanji: "B", arabic: "باء", audio: "audio/b.mp3" }, // تم التصحيح
-    { yezidi: "𐺃", kurmanji: "P", arabic: "پاء", audio: "audio/p.mp3" }, // تم التصحيح
+    { yezidi: "𐺀", kurmanji: "A", arabic: "ألف", audio: "audio/a.mp3" }, 
+    { yezidi: "𐺁", kurmanji: "B", arabic: "باء", audio: "audio/b.mp3" }, 
+    { yezidi: "𐺃", kurmanji: "P", arabic: "پاء", audio: "audio/p.mp3" }, 
     { yezidi: "𐺂", kurmanji: "Ph", arabic: "باء انفجارية", audio: "audio/ph.mp3" },
     { yezidi: "𐺄", kurmanji: "T'", arabic: "تاء", audio: "audio/t.mp3" },
     { yezidi: "𐺅", kurmanji: "S", arabic: "ثاء", audio: "audio/s.mp3" },
@@ -15,12 +15,9 @@ const lettersData = [
     { yezidi: "𐺏", kurmanji: "Z", arabic: "ذال", audio: "audio/z.mp3" },
     { yezidi: "𐺍", kurmanji: "R", arabic: "راء مخففة", audio: "audio/r.mp3" },
     { yezidi: "𐺎", kurmanji: "R'", arabic: "راء مفخمة", audio: "audio/rh.mp3" },
-
     { yezidi: "𐺐", kurmanji: "J", arabic: "جيم خفيفة (ژ)", audio: "audio/je.mp3" },
     { yezidi: "𐺑", kurmanji: "S", arabic: "سين", audio: "audio/sin.mp3" },
     { yezidi: "𐺒", kurmanji: "Sh", arabic: "شين", audio: "audio/sh.mp3" },
-
-
     { yezidi: "𐺕", kurmanji: "T", arabic: "طاء", audio: "audio/ta.mp3" },
     { yezidi: "𐺖", kurmanji: "Z'", arabic: "ظاء", audio: "audio/ze.mp3" },
     { yezidi: "𐺗", kurmanji: "E'", arabic: "عين", audio: "audio/eyn.mp3" },
@@ -53,19 +50,29 @@ const wordsData = [
     { yezidi: "𐺁𐺀𐺁", kurmanji: "Bav", arabic: "أب", audio: "audio/word_bav.mp3" }
 ];
 
-// المتغيرات الخاصة بالاختبار
+// المتغيرات الخاصة بالاختبار والتنقل
 let currentQuestionIndex = 0;
 let score = 0;
+let quizTimeout = null; // لإدارة وقت الانتقال بين الأسئلة لمنع التداخل عند الرجوع
 
-// تشغيل الدالة عند تحميل الصفحة لبناء واجهة الحروف
+// تشغيل الدالة عند تحميل الصفحة لبناء واجهة الحروف الرئيسية
 document.addEventListener("DOMContentLoaded", () => {
-    renderLetters();
+    goToHome(); // إظهار الصفحة الرئيسية تلقائياً عند البدء
 });
 
 // وظيفة تشغيل الصوت الموحدة
 function playSound(audioSrc) {
     const audio = new Audio(audioSrc);
     audio.play().catch(err => console.log("ملف الصوت غير موجود بعد: ", audioSrc));
+}
+
+// دالة العودة للرئيسية (الحروف)
+function goToHome() {
+    clearTimeout(quizTimeout); // إيقاف أي انتقال تلقائي للأسئلة في الخلفية
+    document.getElementById("words-section").classList.remove("active");
+    document.getElementById("quiz-section").classList.remove("active");
+    document.getElementById("letters-section").classList.add("active");
+    renderLetters();
 }
 
 // عرض الحروف في الصفحة
@@ -87,7 +94,9 @@ function renderLetters() {
 
 // الانتقال إلى مرحلة الكلمات
 function goToWords() {
+    clearTimeout(quizTimeout);
     document.getElementById("letters-section").classList.remove("active");
+    document.getElementById("quiz-section").classList.remove("active");
     document.getElementById("words-section").classList.add("active");
     renderWords();
 }
@@ -109,8 +118,11 @@ function renderWords() {
     });
 }
 
-// الانتقال إلى مرحلة الاختبار
+// الانتقال إلى مرحلة الاختبار (تصفير العداد والنتيجة عند البدء من جديد)
 function goToQuiz() {
+    currentQuestionIndex = 0;
+    score = 0;
+    document.getElementById("letters-section").classList.remove("active");
     document.getElementById("words-section").classList.remove("active");
     document.getElementById("quiz-section").classList.add("active");
     loadQuestion();
@@ -128,12 +140,12 @@ function loadQuestion() {
 
     if (currentQuestionIndex >= wordsData.length) {
         questionText.innerHTML = "أحسنت! لقد أكملت الاختبار بنجاح.";
-        wordDisplay.innerHTML = `النتيجة: ${score} من ${wordsData.length}`;
+        wordDisplay.innerHTML = `النتيجة النهائية: ${score} من ${wordsData.length}`;
         return;
     }
 
     const currentWord = wordsData[currentQuestionIndex];
-    questionText.innerHTML = "ما معنى هذه الكلمة؟";
+    questionText.innerHTML = `السؤال ${currentQuestionIndex + 1}: ما معنى هذه الكلمة؟`;
     wordDisplay.innerHTML = currentWord.yezidi;
 
     // تشغيل صوت الكلمة تلقائياً عند ظهور السؤال بمثابة مساعدة
@@ -165,14 +177,20 @@ function loadQuestion() {
 // التحقق من الإجابة
 function checkAnswer(selected, correct) {
     const resultDiv = document.getElementById("quiz-result");
+    
+    // تعطيل الأزرار بعد الاختيار لمنع الضغط المتكرر
+    const buttons = document.querySelectorAll(".option-btn");
+    buttons.forEach(btn => btn.disabled = true);
+
     if (selected === correct) {
-        resultDiv.innerHTML = "<span style='color: #2ecc71;'>إجابة صحيحة! أحسنت.</span>";
+        resultDiv.innerHTML = "<span style='color: #2ecc71; font-weight: bold;'>إجابة صحيحة! أحسنت.</span>";
         score++;
     } else {
-        resultDiv.innerHTML = `<span style='color: #e74c3c;'>إجابة خاطئة. الإجابة الصحيحة هي: ${correct}</span>`;
+        resultDiv.innerHTML = `<span style='color: #e74c3c; font-weight: bold;'>إجابة خاطئة. الإجابة الصحيحة هي: ${correct}</span>`;
     }
 
     // الانتقال للسؤال التالي بعد ثانيتين لقراءة النتيجة
     currentQuestionIndex++;
-    setTimeout(loadQuestion, 2000);
+    quizTimeout = setTimeout(loadQuestion, 2000);
 }
+
