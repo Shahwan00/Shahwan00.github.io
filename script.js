@@ -164,6 +164,7 @@ function loadQuestion() {
         questionText.innerHTML = "أحسنت! لقد أكملت الاختبار بنجاح.";
         wordDisplay.innerHTML = `النتيجة: ${score} من ${wordsData.length}`;
         return;
+ 
     }
 const homeBtn = document.createElement("button");
 homeBtn.className = "btn"; 
