@@ -38,7 +38,7 @@ const lettersData = [
     { yezidi: "𐺣𐺣", kurmanji: "Û", arabic: "وو", audio: "audio/ü.mp3" },
     { yezidi: "𐺤", kurmanji: "W", arabic: "واو (W)", audio: "audio/uu.mp3" },
     { yezidi: "𐺥", kurmanji: "O", arabic: "ۆ (O)", audio: "audio/o.mp3" },
-   { yezidi: "𐺦", kurmanji: "e", arabic: " ه (e)", audio: "audio/letter_é.mp3" },
+   { yezidi: "𐺦", kurmanji: "e", arabic: " ه (e)", audio: "audio/letter_ea.mp3" },
     { yezidi: "𐺧", kurmanji: "h", arabic: " / ه‍ ", audio: "audio/h.mp3" },
     { yezidi: "𐺌", kurmanji: "i", arabic: "ئ خفيف جداً", audio: "audio/i.mp3" },
     { yezidi: "𐺨", kurmanji: "î", arabic: "ي", audio: "audio/î.mp3" },
