@@ -164,6 +164,13 @@ function loadQuestion() {
 
     if (currentQuestionIndex >= wordsData.length) {
         questionText.innerHTML = "أحسنت! لقد أكملت الاختبار بنجاح.";
+
+        const homeBtn = document.createElement("button");
+homeBtn.className = "btn";
+homeBtn.innerText = "العودة إلى الصفحة الرئيسية";
+homeBtn.onclick = goToHome;
+optionsGrid.appendChild(homeBtn);
+
         wordDisplay.innerHTML = `النتيجة: ${score} من ${wordsData.length}`;
         return;
  
