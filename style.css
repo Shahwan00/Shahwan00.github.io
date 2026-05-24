@@ -108,45 +108,64 @@ button {
     display: inline-block;
 }
 
-/* تنسيق القائمة الجانبية الخفية */
-.sidebar {
-    height: 100%;
-    width: 0; /* تبدأ من عرض صفر لكي تكون مخفية */
+/* تنسيق زر الفتح (الثلاث خطوط) */
+.open-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: black; /* يمكنك تغييره لأي لون يناسب تصميمك */
+    cursor: pointer;
+    padding: 10px;
     position: fixed;
+    top: 10px;
+    right: 10px; /* يضع الزر في أعلى اليمين */
     z-index: 1000;
-    top: 0;
-    left: 0;
-    background-color: #333333; /* لون غامق مثل الصورة */
-    overflow-x: hidden;
-    transition: 0.4s; /* سرعة حركة فتح وإغلاق القائمة */
-    padding-top: 60px;
-    box-shadow: 2px 0px 10px rgba(0,0,0,0.5);
 }
 
-/* تنسيق الكلمات داخل القائمة */
-.sidebar .menu-item {
-    padding: 15px 25px;
+/* تنسيق القائمة الجانبية المخفية */
+.side-menu {
+    height: 100%;
+    width: 0; /* تبدأ بعرض صفر لكي تكون مخفية تماماً */
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    right: 0; /* لتظهر في جناح الشاشة الأيمن */
+    background-color: #111; /* لون خلفية داكن ومميز للقائمة */
+    overflow-x: hidden;
+    transition: 0.4s; /* سرعة حركة ظهور واختفاء القائمة */
+    padding-top: 60px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+}
+
+/* تنسيق الروابط داخل القائمة */
+.side-menu a {
+    padding: 12px 24px;
     text-decoration: none;
     font-size: 18px;
-    color: #ffffff;
+    color: #818181;
     display: block;
     transition: 0.3s;
-    cursor: pointer;
-    text-align: right; /* محاذاة النص */
+    text-align: right; /* لتتناسب مع اللغة العربية */
 }
 
-/* تأثير عند تمرير الماوس فوق الكلمات */
-.sidebar .menu-item:hover {
-    background-color: #444444;
-    color: #2ecc71;
+/* تغيير لون الرابط عند مرور الماوس عليه */
+.side-menu a:hover {
+    color: #f1f1f1;
+    background-color: #222;
 }
 
-/* زر إغلاق القائمة (X) */
-.sidebar .close-btn {
+/* تنسيق زر الإغلاق (X) داخل القائمة */
+.side-menu .close-btn {
     position: absolute;
     top: 10px;
-    right: 25px;
+    left: 20px; /* يضع زر X في جهة اليسار داخل القائمة */
     font-size: 36px;
-    color: #ffffff;
+    background: none;
+    border: none;
+    color: #818181;
     cursor: pointer;
+}
+
+.side-menu .close-btn:hover {
+    color: #f1f1f1;
 }
