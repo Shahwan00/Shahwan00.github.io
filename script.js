@@ -206,3 +206,11 @@ function checkAnswer(selected, correct) {
     currentQuestionIndex++;
     setTimeout(loadQuestion, 2000);
 }
+
+// دالة فتح وإغلاق القائمة الجانبية
+function toggleSidebar(open) {
+    const sidebar = document.getElementById("mySidebar");
+    if (sidebar) {
+        sidebar.style.width = open ? "280px" : "0"; // تفتح بعرض 280 بكسل وتغلق إلى صفر
+    }
+}
