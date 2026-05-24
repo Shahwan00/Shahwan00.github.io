@@ -200,6 +200,7 @@ function checkAnswer(selected, correct) {
         resultDiv.innerHTML = "<span style='color: #2ecc71;'>إجابة صحيحة! أحسنت.</span>";
         score++;
     } else {
+    
         resultDiv.innerHTML = `<span style='color: #e74c3c;'>إجابة خاطئة. الإجابة الصحيحة هي: ${correct}</span>`;
     }
 
@@ -207,10 +208,20 @@ function checkAnswer(selected, correct) {
     setTimeout(loadQuestion, 2000);
 }
 
-// دالة فتح وإغلاق القائمة الجانبية
-function toggleSidebar(open) {
-    const sidebar = document.getElementById("mySidebar");
-    if (sidebar) {
-        sidebar.style.width = open ? "280px" : "0"; // تفتح بعرض 280 بكسل وتغلق إلى صفر
+ function toggleMenu() {
+    var menu = document.getElementById("sideMenu");
+    
+    // إذا كانت القائمة مغلقة (عرضها صفر)، افتحها واجعل عرضها 250 بكسل في جانب الشاشة
+    if (menu.style.width === "250px") {
+        menu.style.width = "0";
+    } else {
+        menu.style.width = "250px";
     }
 }
+
+// إغلاق القائمة تلقائياً عند الضغط على أي رابط بداخلها
+document.querySelectorAll('.side-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById("sideMenu").style.width = "0";
+    });
+});
