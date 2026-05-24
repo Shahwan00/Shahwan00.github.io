@@ -99,3 +99,54 @@ button {
 #next-btn:active {
   transform: scale(0.98);
 }
+
+/* تنسيق أيقونة الثلاث خطوط */
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    display: inline-block;
+}
+
+/* تنسيق القائمة الجانبية الخفية */
+.sidebar {
+    height: 100%;
+    width: 0; /* تبدأ من عرض صفر لكي تكون مخفية */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #333333; /* لون غامق مثل الصورة */
+    overflow-x: hidden;
+    transition: 0.4s; /* سرعة حركة فتح وإغلاق القائمة */
+    padding-top: 60px;
+    box-shadow: 2px 0px 10px rgba(0,0,0,0.5);
+}
+
+/* تنسيق الكلمات داخل القائمة */
+.sidebar .menu-item {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: right; /* محاذاة النص */
+}
+
+/* تأثير عند تمرير الماوس فوق الكلمات */
+.sidebar .menu-item:hover {
+    background-color: #444444;
+    color: #2ecc71;
+}
+
+/* زر إغلاق القائمة (X) */
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    color: #ffffff;
+    cursor: pointer;
+}
