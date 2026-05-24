@@ -165,7 +165,13 @@ function loadQuestion() {
         wordDisplay.innerHTML = `النتيجة: ${score} من ${wordsData.length}`;
         return;
     }
-
+const homeBtn = document.createElement("button");
+homeBtn.className = "btn"; 
+homeBtn.innerText = "العودة إلى الصفحة الرئيسية";
+homeBtn.onclick = goToHome;
+optionsGrid.appendChild(homeBtn);
+    
+    
     const currentWord = wordsData[currentQuestionIndex];
     questionText.innerHTML = "ما معنى هذه الكلمة؟";
     wordDisplay.innerHTML = currentWord.yezidi;
