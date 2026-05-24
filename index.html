@@ -140,18 +140,18 @@
 
     <div class="container">
 
-    <button class="open-btn" onclick="toggleMenu()">☰</button>
+    <div class="menu-icon" onclick="toggleSidebar(true)">&#9776;</div>
 
-<div id="sideMenu" class="side-menu">
-    <button class="close-btn" onclick="toggleMenu()">×</button>
-    
-    <a href="#home">الصفحة الرئيسية</a>
-    <a href="#letters">انتقال إلى الحروف</a>
-    <a href="#words">انتقال إلى كلمات</a>
-    <a href="#quiz">انتقال إلى اختبار</a>
-    <a href="#errors">تصحيح الأخطاء</a>
-    <a href="#info">معلومات</a>
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar(false)">&times;</a>
+    <a href="#" onclick="goToHome(); toggleSidebar(false);">انتقال الى صفحة الرئيسية</a>
+    <a href="#" onclick="goToLetters(); toggleSidebar(false);">انتقال الى حروف</a>
+    <a href="#" onclick="goToWords(); toggleSidebar(false);">انتقال الى كلمات</a>
+    <a href="#" onclick="goToQuiz(); toggleSidebar(false);">انتقال الى اختبار</a>
+    <a href="#" onclick="goToErrors(); toggleSidebar(false);">انتقال الى أخطاء و تصحيح</a>
+    <a href="#" onclick="showAppInfo(); toggleSidebar(false);">معلومات</a>
 </div>
+        
         
  
 
