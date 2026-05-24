@@ -157,3 +157,40 @@ button {
     font-size: 36px;
     color: #333;
 }
+/* تنسيق الحاوية الرئيسية للهيدر */
+.main-header {
+    display: flex;
+    justify-content: space-between; /* لتوزيع العناصر: يمين، منتصف، يسار */
+    align-items: center;            /* لمحاداة العناصر عمودياً في المنتصف */
+    padding: 20px;
+    background-color: #ffffff;      /* لون الخلفية البيضاء */
+    max-width: 1200px;              /* تحديد أقصى عرض لتتناسب مع شبكة الحروف */
+    margin: 0 auto;                 /* لتوسيط الهيدر بالكامل في الصفحة */
+}
+
+/* تنسيق النصوص في المنتصف */
+.header-text-center {
+    text-align: center;
+    flex-grow: 1;                   /* لضمان بقاء النص مسيطراً على المنتصف */
+}
+
+.header-text-center h1 {
+    font-size: 24px;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.header-text-center h2 {
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 10px;
+}
+
+/* تنسيق حجم الصور (اللوجو والعلم) ليظهروا بشكل متناسق ومستدير إذا لزم الأمر */
+.header-logo-right img, 
+.header-logo-left img {
+    max-height: 120px;             /* يمكنك التحكم في الارتفاع المناسب من هنا */
+    width: auto;
+    object-fit: contain;
+}
+
