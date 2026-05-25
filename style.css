@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght=200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
 
 @font-face {
   font-family: 'Noto Serif Yezidi';
@@ -16,7 +16,7 @@ body {
     direction: rtl;
 }
 
-/* إصلاح الجزء التائه وحصره في حاوية العرض الرئيسية */
+/* الحاوية الرئيسية للمحتوى */
 .main-container {
     text-align: center;
     background-color: #fff;
@@ -34,7 +34,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* المربع الخاص بالحرف - تم إلغاء أي تأثير تكبير فيه */
+/* المربع الخاص بالحرف - ثبات الحجم والتنسيق */
 #char-display {
   font-family: 'Noto Serif Yezidi', serif;
   font-size: 96px;
@@ -47,10 +47,10 @@ h1 {
   border: 2px dashed #ddd;
   border-radius: 8px;
   color: #2c3e50;
-  transition: none !important; /* يمنع أي حركة فجائية */
+  transition: none !important;
 }
 
-/* منع الحرف أو الإشارة داخل المربع من التغير تماماً عند الضغط */
+/* منع الحرف أو الإشارة داخل المربع من التضخم تماماً عند الضغط */
 #char-display:active, #char-display * {
   transform: none !important;
   font-size: 96px !important;
@@ -78,7 +78,7 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s; /* إزالة تذبذب الحجم */
+  transition: background-color 0.2s;
 }
 
 #prev-btn {
@@ -90,7 +90,6 @@ button {
   background-color: #c0392b;
 }
 
-/* تم إلغاء الـ scale هنا ليبقى الحجم ثابتاً كما طلبت */
 #prev-btn:active {
   transform: none !important;
 }
@@ -104,7 +103,6 @@ button {
   background-color: #27ae60;
 }
 
-/* تم إلغاء الـ scale هنا ليبقى الحجم ثابتاً كما طلبت */
 #next-btn:active {
   transform: none !important;
 }
@@ -117,7 +115,7 @@ button {
     display: inline-block;
 }
 
-/* تنسيق زر الفتح (الثلاث خطوط) */
+/* تنسيق زر الفتح */
 .open-btn {
     font-size: 24px;
     background: none;
@@ -167,7 +165,7 @@ button {
     color: #333;
 }
 
-/* تنسيق الحاوية الرئيسية للهيدر */
+/* تنسيق الهيدر */
 .main-header {
     display: flex;
     justify-content: space-between; 
@@ -178,7 +176,6 @@ button {
     margin: 0 auto;                 
 }
 
-/* تنسيق النصوص في المنتصف */
 .header-text-center {
     text-align: center;
     flex-grow: 1;                   
@@ -196,7 +193,6 @@ button {
     margin-bottom: 10px;
 }
 
-/* تنسيق حجم الصور لتصبح متجاوبة */
 .header-logo-right img, 
 .header-logo-left img {
     max-height: 80px;
@@ -204,7 +200,7 @@ button {
     object-fit: contain;
 }
 
-/* تنسيق خاص بالجوال والشاشات الصغيرة */
+/* التجاوب مع الشاشات الصغيرة */
 @media (max-width: 768px) {
     .main-header {
         flex-direction: column; 
