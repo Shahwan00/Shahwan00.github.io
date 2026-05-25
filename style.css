@@ -153,6 +153,10 @@ body {
     text-align: center;
 }
 
+.card:active, .card.active {
+    transform: none;
+    pointer-events: none;
+}
 
 .translation {
     font-size: 14px;
