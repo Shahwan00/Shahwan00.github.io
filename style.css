@@ -1,29 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght=200..1000&display=swap');
 
 @font-face {
   font-family: 'Noto Serif Yezidi';
-  url('/NotoSerifYezidi-VariableFont_wght.ttf') format('truetype');
-  
+  src: url('./NotoSerifYezidi-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
 }
 
 body {
-    font-family: 'Cairo', sans-serif; /* أو اسم الخط الذي تستخدمه */
+    font-family: 'Cairo', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f7fafc;
     min-height: 100vh;
-    direction: rtl; /* لضمان اتجاه النص العربي الصحيح */
+    direction: rtl;
 }
 
-  text-align: center;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  width: 90%;
+/* إصلاح الجزء التائه وحصره في حاوية العرض الرئيسية */
+.main-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    margin: 20px auto;
 }
 
 h1 {
@@ -32,6 +34,7 @@ h1 {
   margin-bottom: 20px;
 }
 
+/* المربع الخاص بالحرف - تم إلغاء أي تأثير تكبير فيه */
 #char-display {
   font-family: 'Noto Serif Yezidi', serif;
   font-size: 96px;
@@ -44,6 +47,13 @@ h1 {
   border: 2px dashed #ddd;
   border-radius: 8px;
   color: #2c3e50;
+  transition: none !important; /* يمنع أي حركة فجائية */
+}
+
+/* منع الحرف أو الإشارة داخل المربع من التغير تماماً عند الضغط */
+#char-display:active, #char-display * {
+  transform: none !important;
+  font-size: 96px !important;
 }
 
 #char-name {
@@ -68,7 +78,7 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s, transform 0.1s;
+  transition: background-color 0.2s; /* إزالة تذبذب الحجم */
 }
 
 #prev-btn {
@@ -80,8 +90,9 @@ button {
   background-color: #c0392b;
 }
 
+/* تم إلغاء الـ scale هنا ليبقى الحجم ثابتاً كما طلبت */
 #prev-btn:active {
-  transform: scale(0.98);
+  transform: none !important;
 }
 
 #next-btn {
@@ -93,8 +104,9 @@ button {
   background-color: #27ae60;
 }
 
+/* تم إلغاء الـ scale هنا ليبقى الحجم ثابتاً كما طلبت */
 #next-btn:active {
-  transform: scale(0.98);
+  transform: none !important;
 }
 
 /* تنسيق أيقونة الثلاث خطوط */
@@ -110,12 +122,12 @@ button {
     font-size: 24px;
     background: none;
     border: none;
-    color: black; /* يمكنك تغييره لأي لون يناسب تصميمك */
+    color: black;
     cursor: pointer;
     padding: 10px;
     position: fixed;
     top: 10px;
-    right: 10px; /* يضع الزر في أعلى اليمين */
+    right: 10px;
     z-index: 1000;
 }
 
@@ -154,7 +166,6 @@ button {
     font-size: 36px;
     color: #333;
 }
-/* تنسيق الحاوية الرئيسية للهيدر */
 
 /* تنسيق الحاوية الرئيسية للهيدر */
 .main-header {
@@ -188,7 +199,7 @@ button {
 /* تنسيق حجم الصور لتصبح متجاوبة */
 .header-logo-right img, 
 .header-logo-left img {
-    max-height: 80px;            /* تم تقليص الارتفاع قليلاً ليناسب الجوال */
+    max-height: 80px;
     width: auto;
     object-fit: contain;
 }
@@ -203,11 +214,11 @@ button {
 
     .header-logo-right img, 
     .header-logo-left img {
-        max-height: 60px;        /* تصغير أكبر للصور على الشاشات الصغيرة جداً */
+        max-height: 60px;
     }
 
     .header-text-center h1 {
-        font-size: 20px;         /* تصغير حجم الخط ليتناسب مع العرض الصغير */
+        font-size: 20px;
     }
 
     .header-text-center h2 {
