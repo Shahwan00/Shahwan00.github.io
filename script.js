@@ -32,7 +32,7 @@ const lettersData = [
     { yezidi: "𐺠", kurmanji: "L", arabic: "لام", audio: "audio/l.mp3" },
     { yezidi: "𐺡", kurmanji: "M", arabic: "ميم", audio: "audio/m.mp3" },
     { yezidi: "𐺢", kurmanji: "N", arabic: "نون", audio: "audio/n.mp3" },
-    { yezidi: "𐺣", kurmanji: "U", arabic: "واو قصيرة / ضمة", audio: "audio/u.mp3" },
+    { yezidi: "𐺣", kurmanji: "U", arabic: "واو قصيرة / ضمة", audio: "audio/uw.mp3" },
    
     
     { yezidi: "𐺣𐺣", kurmanji: "Û", arabic: "وو", audio: "audio/ü.mp3" },
