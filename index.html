@@ -1,58 +1,64 @@
 <!DOCTYPE html>
-<html lang="ku" dir="rtl">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعلم اللغة الإيزيدية</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>موقعي البسيط</title>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3516282666099519"
-     crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0077ff;
+      color: white;
+      padding: 20px;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    button {
+      background-color: #0077ff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #005bcc;
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="container">
+  <header>
+    <h1>أهلاً بك في موقعي</h1>
+  </header>
 
-        <header class="main-header">
-            <div class="header-logo-right">
-                <img src="images/IMG_20260429_211917_056.jpg" alt="Logo">
-                <div class="logo-subtext">Akademiya Ezidi</div>
-            </div>
+  <div class="container">
+    <p>هذه صفحة ويب بسيطة للمبتدئين.</p>
 
-            <div class="header-text-center">
-                <h1>برنامج تعلم اللغة الإيزيدية</h1>
-                <h2>المرحلة الأولى: تعلّم الحروف</h2>
-                <p>اضغط على الحرف للاستماع إلى النطق الصحيح:</p>
-            </div>
+    <button onclick="showMessage()">
+      اضغط هنا
+    </button>
+  </div>
 
-            <div class="header-logo-left">
-                <img src="images/images.jpeg" alt="Flag">
-            </div>
-        </header>
+  <script>
+    function showMessage() {
+      alert("مرحباً بك!");
+    }
+  </script>
 
-        <div id="letters-section" class="section active">
-            <div class="grid-container" id="letters-grid"></div>
-            <button class="btn" onclick="goToWords()">الانتقال إلى الكلمات ←</button>
-        </div>
-
-        <div id="words-section" class="section" style="display:none;">
-            <h2>المرحلة الثانية: تعلّم الكلمات</h2>
-            <p>اضغط على الكلمة للاستماع إلى نطقها:</p>
-            <div class="grid-container" id="words-grid"></div>
-            <button class="btn" onclick="goToQuiz()">الانتقال إلى الاختبار ←</button>
-        </div>
-
-        <div id="quiz-section" class="section" style="display:none;">
-            <h2>المرحلة الثالثة: الاختبار (Test)</h2>
-            <div class="quiz-container">
-                <p id="quiz-question" style="font-size: 20px; font-weight: bold;"></p>
-                <div id="quiz-word" class="yezidi-text" style="font-size: 48px; margin: 20px 0;"></div>
-                <div class="options-grid" id="quiz-options"></div>
-            </div>
-            <div id="quiz-result" style="margin-top: 20px; font-size: 18px; font-weight: bold;"></div>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
