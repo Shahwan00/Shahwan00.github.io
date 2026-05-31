@@ -1,248 +1,58 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="ku" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعلم اللغة الإيزيدية</title>
+    <link rel="stylesheet" href="style.css">
 
-  <title>German A1 Vocabulary</title>
-
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f4f4f4;
-      margin:0;
-      padding:0;
-      line-height:1.8;
-    }
-
-    header{
-      background:#111;
-      color:white;
-      text-align:center;
-      padding:30px;
-    }
-
-    .container{
-      width:90%;
-      max-width:1200px;
-      margin:auto;
-      padding:20px;
-    }
-
-    .section{
-      background:white;
-      margin-bottom:25px;
-      padding:20px;
-      border-radius:12px;
-      box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    h2{
-      color:#0077ff;
-      border-bottom:2px solid #0077ff;
-      padding-bottom:10px;
-    }
-
-    ul{
-      columns:3;
-    }
-
-    li{
-      margin-bottom:8px;
-    }
-
-    .exam-question{
-      margin-bottom:15px;
-      padding:10px;
-      background:#eef5ff;
-      border-radius:8px;
-    }
-
-    @media(max-width:768px){
-      ul{
-        columns:1;
-      }
-    }
-  </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3516282666099519"
+     crossorigin="anonymous"></script>
 </head>
-
 <body>
 
-<header>
-  <h1>German A1 Vocabulary</h1>
-  <p>Complete A1 German Words + Exam</p>
-</header>
+    <div class="container">
 
-<div class="container">
+        <header class="main-header">
+            <div class="header-logo-right">
+                <img src="images/IMG_20260429_211917_056.jpg" alt="Logo">
+                <div class="logo-subtext">Akademiya Ezidi</div>
+            </div>
 
-  <div class="section">
-    <h2>Begrüßungen</h2>
-    <ul>
-      <li>Hallo</li>
-      <li>Guten Morgen</li>
-      <li>Guten Tag</li>
-      <li>Guten Abend</li>
-      <li>Tschüss</li>
-      <li>Auf Wiedersehen</li>
-      <li>Danke</li>
-      <li>Bitte</li>
-      <li>Entschuldigung</li>
-      <li>Ja</li>
-      <li>Nein</li>
-    </ul>
-  </div>
+            <div class="header-text-center">
+                <h1>برنامج تعلم اللغة الإيزيدية</h1>
+                <h2>المرحلة الأولى: تعلّم الحروف</h2>
+                <p>اضغط على الحرف للاستماع إلى النطق الصحيح:</p>
+            </div>
 
-  <div class="section">
-    <h2>Zahlen</h2>
-    <ul>
-      <li>null</li>
-      <li>eins</li>
-      <li>zwei</li>
-      <li>drei</li>
-      <li>vier</li>
-      <li>fünf</li>
-      <li>sechs</li>
-      <li>sieben</li>
-      <li>acht</li>
-      <li>neun</li>
-      <li>zehn</li>
-      <li>elf</li>
-      <li>zwölf</li>
-      <li>zwanzig</li>
-      <li>dreißig</li>
-      <li>hundert</li>
-    </ul>
-  </div>
+            <div class="header-logo-left">
+                <img src="images/images.jpeg" alt="Flag">
+            </div>
+        </header>
 
-  <div class="section">
-    <h2>Familie</h2>
-    <ul>
-      <li>die Mutter</li>
-      <li>der Vater</li>
-      <li>der Bruder</li>
-      <li>die Schwester</li>
-      <li>die Oma</li>
-      <li>der Opa</li>
-      <li>der Sohn</li>
-      <li>die Tochter</li>
-      <li>die Familie</li>
-    </ul>
-  </div>
+        <div id="letters-section" class="section active">
+            <div class="grid-container" id="letters-grid"></div>
+            <button class="btn" onclick="goToWords()">الانتقال إلى الكلمات ←</button>
+        </div>
 
-  <div class="section">
-    <h2>Essen und Trinken</h2>
-    <ul>
-      <li>das Wasser</li>
-      <li>der Kaffee</li>
-      <li>der Tee</li>
-      <li>die Milch</li>
-      <li>das Brot</li>
-      <li>der Käse</li>
-      <li>das Fleisch</li>
-      <li>der Fisch</li>
-      <li>der Reis</li>
-      <li>der Apfel</li>
-      <li>die Banane</li>
-      <li>die Orange</li>
-    </ul>
-  </div>
+        <div id="words-section" class="section" style="display:none;">
+            <h2>المرحلة الثانية: تعلّم الكلمات</h2>
+            <p>اضغط على الكلمة للاستماع إلى نطقها:</p>
+            <div class="grid-container" id="words-grid"></div>
+            <button class="btn" onclick="goToQuiz()">الانتقال إلى الاختبار ←</button>
+        </div>
 
-  <div class="section">
-    <h2>Haus</h2>
-    <ul>
-      <li>das Haus</li>
-      <li>die Wohnung</li>
-      <li>das Zimmer</li>
-      <li>die Küche</li>
-      <li>das Bad</li>
-      <li>das Bett</li>
-      <li>die Tür</li>
-      <li>das Fenster</li>
-      <li>der Tisch</li>
-      <li>der Stuhl</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Verben</h2>
-    <ul>
-      <li>sein</li>
-      <li>haben</li>
-      <li>gehen</li>
-      <li>kommen</li>
-      <li>machen</li>
-      <li>lernen</li>
-      <li>lesen</li>
-      <li>schreiben</li>
-      <li>essen</li>
-      <li>trinken</li>
-      <li>wohnen</li>
-      <li>arbeiten</li>
-      <li>spielen</li>
-      <li>sprechen</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Farben</h2>
-    <ul>
-      <li>rot</li>
-      <li>blau</li>
-      <li>grün</li>
-      <li>gelb</li>
-      <li>schwarz</li>
-      <li>weiß</li>
-      <li>braun</li>
-      <li>orange</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Prüfung A1</h2>
-
-    <div class="exam-question">
-      1. Wie heißt du?
+        <div id="quiz-section" class="section" style="display:none;">
+            <h2>المرحلة الثالثة: الاختبار (Test)</h2>
+            <div class="quiz-container">
+                <p id="quiz-question" style="font-size: 20px; font-weight: bold;"></p>
+                <div id="quiz-word" class="yezidi-text" style="font-size: 48px; margin: 20px 0;"></div>
+                <div class="options-grid" id="quiz-options"></div>
+            </div>
+            <div id="quiz-result" style="margin-top: 20px; font-size: 18px; font-weight: bold;"></div>
+        </div>
     </div>
 
-    <div class="exam-question">
-      2. Wo wohnst du?
-    </div>
-
-    <div class="exam-question">
-      3. Was trinkst du gern?
-    </div>
-
-    <div class="exam-question">
-      4. Hast du Geschwister?
-    </div>
-
-    <div class="exam-question">
-      5. Welche Farbe magst du?
-    </div>
-
-    <div class="exam-question">
-      6. Ich ___ Ali.
-    </div>
-
-    <div class="exam-question">
-      7. Wir ___ Deutsch.
-    </div>
-
-    <div class="exam-question">
-      8. Das ___ mein Bruder.
-    </div>
-
-    <div class="exam-question">
-      9. Wie sagt man „water“ auf Deutsch?
-    </div>
-
-    <div class="exam-question">
-      10. Wie sagt man „mother“ auf Deutsch?
-    </div>
-
-  </div>
-
-</div>
-
+    <script src="script.js"></script>
 </body>
 </html>
