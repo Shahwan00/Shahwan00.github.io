@@ -48,8 +48,8 @@ const lettersData = [
 
 // 2. قاعدة بيانات الكلمات (تم تحديثها بـ 20 كلمة إيزيدية وترجمتها بالعربية)
 const wordsData = [
-    { yezidi: "𐺀𐺁", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
-    { yezidi: "𐺃𐺁", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
+    { yezidi: "𐺀𐺛", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
+    { yezidi: "𐺈𐺀𐺛", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
     { yezidi: "𐺁𐺀𐺁", kurmanji: "Bav", arabic: "أب", audio: "audio/word_bav.mp3" },
     
     // --- الكلمات الإيزيدية المضافة حديثاً ---
