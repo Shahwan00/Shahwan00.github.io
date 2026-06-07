@@ -22,11 +22,12 @@ const lettersData = [
 
 
     { yezidi: "𐺕", kurmanji: "T", arabic: "طاء", audio: "audio/ta.mp3" },
-    { yezidi: "𐺖", kurmanji: "Z'", arabic: "ظاء", audio: "audio/ze.mp3" },
-    { yezidi: "𐺗", kurmanji: "E'", arabic: "عين", audio: "audio/eyn.mp3" },
+
+    
+    { yezidi: "𐺗", kurmanji: "A'", arabic: "عين", audio: "audio/eyn.mp3" },
     { yezidi: "𐺘", kurmanji: "X'", arabic: "غين", audio: "audio/xheyn.mp3" },
     { yezidi: "𐺙", kurmanji: "F", arabic: "فاء", audio: "audio/f.mp3" },
-    { yezidi: "𐺚", kurmanji: "V", arabic: "ڤاء", audio: "audio/v.mp3" },
+
     { yezidi: "𐺛", kurmanji: "V", arabic: "واو / ڤ (شكل بديل)", audio: "audio/v_alt.mp3" },
     { yezidi: "𐺜", kurmanji: "Q", arabic: "قاف", audio: "audio/q.mp3" },
     { yezidi: "𐺝", kurmanji: "K", arabic: "كاف", audio: "audio/k.mp3" },
@@ -36,11 +37,11 @@ const lettersData = [
     { yezidi: "𐺡", kurmanji: "M", arabic: "ميم", audio: "audio/m.mp3" },
     { yezidi: "𐺢", kurmanji: "N", arabic: "نون", audio: "audio/n.mp3" },
     { yezidi: "𐺣𐺣", kurmanji: "U", arabic: "واو قصيرة / ضمة", audio: "audio/u.mp3" },
-    { yezidi: "𐺤", kurmanji: "Û", arabic: "واو ممدودة", audio: "audio/uu.mp3" },
-    { yezidi: "𐺥", kurmanji: "W", arabic: "واو (W)", audio: "audio/w.mp3" },
-    { yezidi: "𐺦", kurmanji: "O", arabic: "واو تفخيم (O)", audio: "audio/o.mp3" },
-    { yezidi: "𐺧", kurmanji: "E", arabic: "فتحة / ألف قصيرة", audio: "audio/e.mp3" },
-    { yezidi: "𐺨", kurmanji: "H", arabic: "هاء", audio: "audio/ha.mp3" },
+    { yezidi: "𐺥", kurmanji: "Û", arabic: "واو ممدودة", audio: "audio/uu.mp3" },
+    { yezidi: "𐺤", kurmanji: "W", arabic: "واو (W)", audio: "audio/w.mp3" },
+    { yezidi: "𐺣", kurmanji: "O", arabic: "واو تفخيم (O)", audio: "audio/o.mp3" },
+
+    { yezidi: "𐺧", kurmanji: "H", arabic: "هاء", audio: "audio/ha.mp3" },
     { yezidi: "𐺩", kurmanji: "Y", arabic: "ياء", audio: "audio/y.mp3" },
     { yezidi: "𐺰", kurmanji: "Ł", arabic: "لام مفخمة (تاريخية)", audio: "audio/lam_dot.mp3" },
     { yezidi: "𐺱", kurmanji: "Ê", arabic: "ياء بحركات تاريخية", audio: "audio/yot_circumflex.mp3" }
@@ -70,9 +71,9 @@ const wordsData = [
     { yezidi: "", kurmanji: "Nan", arabic: "خبز / طعام", audio: "audio/nan.mp3" },
     { yezidi: "", kurmanji: "Mal", arabic: "بيت", audio: "audio/mal.mp3" },
     { yezidi: "", kurmanji: "Heval", arabic: "صديق", audio: "audio/heval.mp3" },
-    { yezidi: "", kurmanji: "Ziman", arabic: "لغة / لسان", audio: "audio/ziman.mp3" },
-    { yezidi: "", kurmanji: "Roj", arabic: "شمس / يوم", audio: "audio/roj.mp3" },
-    { yezidi: "", kurmanji: "Bira", arabic: "أخ", audio: "audio/bira.mp3" }
+    { yezidi: "", kurmanji: "𐺏𐺌𐺡𐺀𐺢", arabic: "لغة / لسان", audio: "audio/ziman.mp3" },
+    { yezidi: "", kurmanji: "𐺍𐺣𐺐", arabic: "شمس / يوم", audio: "audio/roj.mp3" },
+    { yezidi: "", kurmanji: "𐺁𐺌𐺍𐺀", arabic: "أخ", audio: "audio/bira.mp3" }
 ];
 
 // المتغيرات الخاصة بالاختبار
