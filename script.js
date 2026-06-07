@@ -52,7 +52,16 @@ const wordsData = [
     { yezidi: "𐺀𐺛", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
     { yezidi: "𐺈𐺀𐺛", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
     { yezidi: "𐺁𐺀𐺁", kurmanji: "Bab", arabic: "أب", audio: "audio/word_bav.mp3" }
+
+const wordsData = [
+  { german: "Hallo", audio: "audio/hallo.mp3" },
+  { german: "Danke", audio: "audio/danke.mp3" },
+  { german: " bitte", audio: "audio/bitte.mp3" }
 ];
+
+    
+];
+
 
 // المتغيرات الخاصة بالاختبار الأكاديمي
 let currentQuestionIndex = 0;
