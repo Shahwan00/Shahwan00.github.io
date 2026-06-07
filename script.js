@@ -59,8 +59,7 @@ const wordsData = [
   { german: " bitte", audio: "audio/bitte.mp3" }
 ];
 
-    
-];
+
 
 
 // المتغيرات الخاصة بالاختبار الأكاديمي
