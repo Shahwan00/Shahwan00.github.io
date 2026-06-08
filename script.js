@@ -22,12 +22,11 @@ const lettersData = [
 
 
     { yezidi: "𐺕", kurmanji: "T", arabic: "طاء", audio: "audio/ta.mp3" },
-
-    
-    { yezidi: "𐺗", kurmanji: "A'", arabic: "عين", audio: "audio/eyn.mp3" },
+    { yezidi: "𐺖", kurmanji: "Z'", arabic: "ظاء", audio: "audio/ze.mp3" },
+    { yezidi: "𐺗", kurmanji: "E'", arabic: "عين", audio: "audio/eyn.mp3" },
     { yezidi: "𐺘", kurmanji: "X'", arabic: "غين", audio: "audio/xheyn.mp3" },
     { yezidi: "𐺙", kurmanji: "F", arabic: "فاء", audio: "audio/f.mp3" },
-
+    { yezidi: "𐺚", kurmanji: "V", arabic: "ڤاء", audio: "audio/v.mp3" },
     { yezidi: "𐺛", kurmanji: "V", arabic: "واو / ڤ (شكل بديل)", audio: "audio/v_alt.mp3" },
     { yezidi: "𐺜", kurmanji: "Q", arabic: "قاف", audio: "audio/q.mp3" },
     { yezidi: "𐺝", kurmanji: "K", arabic: "كاف", audio: "audio/k.mp3" },
@@ -37,43 +36,43 @@ const lettersData = [
     { yezidi: "𐺡", kurmanji: "M", arabic: "ميم", audio: "audio/m.mp3" },
     { yezidi: "𐺢", kurmanji: "N", arabic: "نون", audio: "audio/n.mp3" },
     { yezidi: "𐺣𐺣", kurmanji: "U", arabic: "واو قصيرة / ضمة", audio: "audio/u.mp3" },
-    { yezidi: "𐺥", kurmanji: "Û", arabic: "واو ممدودة", audio: "audio/uu.mp3" },
-    { yezidi: "𐺤", kurmanji: "W", arabic: "واو (W)", audio: "audio/w.mp3" },
-    { yezidi: "𐺣", kurmanji: "O", arabic: "واو تفخيم (O)", audio: "audio/o.mp3" },
-
-    { yezidi: "𐺧", kurmanji: "H", arabic: "هاء", audio: "audio/ha.mp3" },
+    { yezidi: "𐺤", kurmanji: "Û", arabic: "واو ممدودة", audio: "audio/uu.mp3" },
+    { yezidi: "𐺥", kurmanji: "W", arabic: "واو (W)", audio: "audio/w.mp3" },
+    { yezidi: "𐺦", kurmanji: "O", arabic: "واو تفخيم (O)", audio: "audio/o.mp3" },
+    { yezidi: "𐺧", kurmanji: "E", arabic: "فتحة / ألف قصيرة", audio: "audio/e.mp3" },
+    { yezidi: "𐺨", kurmanji: "H", arabic: "هاء", audio: "audio/ha.mp3" },
     { yezidi: "𐺩", kurmanji: "Y", arabic: "ياء", audio: "audio/y.mp3" },
     { yezidi: "𐺰", kurmanji: "Ł", arabic: "لام مفخمة (تاريخية)", audio: "audio/lam_dot.mp3" },
     { yezidi: "𐺱", kurmanji: "Ê", arabic: "ياء بحركات تاريخية", audio: "audio/yot_circumflex.mp3" }
 ];
 
-// 2. قاعدة بيانات الكلمات (تم تحديثها بـ 20 كلمة إيزيدية وترجمتها بالعربية)
+// 2. قاعدة بيانات الكلمات (تمت إضافة 20 كلمة ألمانية وشرحها بالعربي)
 const wordsData = [
-    { yezidi: "𐺀𐺛", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
-    { yezidi: "𐺈𐺀𐺛", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
+    { yezidi: "𐺀𐺁", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
+    { yezidi: "𐺃𐺁", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
     { yezidi: "𐺁𐺀𐺁", kurmanji: "Bav", arabic: "أب", audio: "audio/word_bav.mp3" },
     
-    // --- الكلمات الإيزيدية المضافة حديثاً ---
-    { yezidi: "", kurmanji: "Rojbaş", arabic: "نهارك سعيد / مرحباً", audio: "audio/rojbas.mp3" },
-    { yezidi: "", kurmanji: "Sipas", arabic: "شكراً", audio: "audio/sipas.mp3" },
-    { yezidi: "", kurmanji: "Silav", arabic: "سلام / تحية", audio: "audio/silav.mp3" },
-    { yezidi: "", kurmanji: "Baxşîş", arabic: "معذرة / العفو", audio: "audio/baxsis.mp3" },
-    { yezidi: "", kurmanji: "Ez", arabic: "أنا", audio: "audio/ez.mp3" },
-    { yezidi: "", kurmanji: "Tu", arabic: "أنتَ / أنتِ", audio: "audio/tu.mp3" },
-    { yezidi: "", kurmanji: "Erê", arabic: "نعم", audio: "audio/ere.mp3" },
-    { yezidi: "", kurmanji: "Na", arabic: "لا", audio: "audio/na.mp3" },
-    { yezidi: "", kurmanji: "Baş e", arabic: "حسناً / جيد", audio: "audio/bas_e.mp3" },
-    { yezidi: "", kurmanji: "Xatire te", arabic: "مع السلامة", audio: "audio/xatire_te.mp3" },
-    { yezidi: "", kurmanji: "Kî", arabic: "مَن", audio: "audio/ki.mp3" },
-    { yezidi: "", kurmanji: "Çi", arabic: "ماذا", audio: "audio/ci.mp3" },
-    { yezidi: "", kurmanji: "Çon î?", arabic: "كيف حالك؟", audio: "audio/con_i.mp3" },
-    { yezidi: "", kurmanji: "Ez baş im", arabic: "أنا بخير", audio: "audio/ez_bas_im.mp3" },
-    { yezidi: "", kurmanji: "Nan", arabic: "خبز / طعام", audio: "audio/nan.mp3" },
-    { yezidi: "", kurmanji: "Mal", arabic: "بيت", audio: "audio/mal.mp3" },
-    { yezidi: "", kurmanji: "Heval", arabic: "صديق", audio: "audio/heval.mp3" },
-    { yezidi: "", kurmanji: "𐺏𐺌𐺡𐺀𐺢", arabic: "لغة / لسان", audio: "audio/ziman.mp3" },
-    { yezidi: "", kurmanji: "𐺍𐺣𐺐", arabic: "شمس / يوم", audio: "audio/roj.mp3" },
-    { yezidi: "", kurmanji: "𐺁𐺌𐺍𐺀", arabic: "أخ", audio: "audio/bira.mp3" }
+    // --- الكلمات الألمانية الجديدة المضافة ---
+    { yezidi: "", kurmanji: "Hallo", arabic: "مرحباً", audio: "audio/hallo.mp3" },
+    { yezidi: "", kurmanji: "Guten Morgen", arabic: "صباح الخير", audio: "audio/guten_morgen.mp3" },
+    { yezidi: "", kurmanji: "Bitte", arabic: "من فضلك / العفو", audio: "audio/bitte.mp3" },
+    { yezidi: "", kurmanji: "Danke", arabic: "شكراً", audio: "audio/danke.mp3" },
+    { yezidi: "", kurmanji: "Ja", arabic: "نعم", audio: "audio/ja.mp3" },
+    { yezidi: "", kurmanji: "Nein", arabic: "لا", audio: "audio/nein.mp3" },
+    { yezidi: "", kurmanji: "Wasser", arabic: "ماء (ألماني)", audio: "audio/wasser.mp3" },
+    { yezidi: "", kurmanji: "Brot", arabic: "خبز", audio: "audio/brot.mp3" },
+    { yezidi: "", kurmanji: "Haus", arabic: "منزل", audio: "audio/haus.mp3" },
+    { yezidi: "", kurmanji: "Auto", arabic: "سيارة", audio: "audio/auto.mp3" },
+    { yezidi: "", kurmanji: "Buch", arabic: "كتاب", audio: "audio/buch.mp3" },
+    { yezidi: "", kurmanji: "Schule", arabic: "مدرسة", audio: "audio/schule.mp3" },
+    { yezidi: "", kurmanji: "Freund", arabic: "صديق", audio: "audio/freund.mp3" },
+    { yezidi: "", kurmanji: "Familie", arabic: "عائلة", audio: "audio/familie.mp3" },
+    { yezidi: "", kurmanji: "Zeit", arabic: "وقت", audio: "audio/zeit.mp3" },
+    { yezidi: "", kurmanji: "Tag", arabic: "يوم", audio: "audio/tag.mp3" },
+    { yezidi: "", kurmanji: "Nacht", arabic: "ليلة", audio: "audio/nacht.mp3" },
+    { yezidi: "", kurmanji: "Milch", arabic: "حليب", audio: "audio/milch.mp3" },
+    { yezidi: "", kurmanji: "Apfel", arabic: "تفاحة", audio: "audio/apfel.mp3" },
+    { yezidi: "", kurmanji: "Tschüss", arabic: "وداعاً", audio: "audio/tschuess.mp3" }
 ];
 
 // المتغيرات الخاصة بالاختبار
@@ -94,7 +93,6 @@ function playSound(audioSrc) {
 // عرض الحروف في الصفحة
 function renderLetters() {
     const grid = document.getElementById("letters-grid");
-    if (!grid) return;
     grid.innerHTML = "";
     lettersData.forEach(item => {
         const card = document.createElement("div");
@@ -119,7 +117,6 @@ function goToWords() {
 // عرض الكلمات في الصفحة
 function renderWords() {
     const grid = document.getElementById("words-grid");
-    if (!grid) return;
     grid.innerHTML = "";
     wordsData.forEach(item => {
         const card = document.createElement("div");
@@ -127,7 +124,7 @@ function renderWords() {
         card.onclick = () => playSound(item.audio);
         
         card.innerHTML = `
-            <div class="yezidi-text">${item.yezidi ? item.yezidi : "ـــ"}</div>
+            <div class="yezidi-text">${item.yezidi}</div>
             <div class="translation">${item.kurmanji} (${item.arabic})</div>
         `;
         grid.appendChild(card);
@@ -148,8 +145,6 @@ function loadQuestion() {
     const optionsGrid = document.getElementById("quiz-options");
     const resultDiv = document.getElementById("quiz-result");
 
-    if (!questionText || !wordDisplay || !optionsGrid || !resultDiv) return;
-
     resultDiv.innerHTML = "";
     optionsGrid.innerHTML = "";
 
@@ -162,7 +157,7 @@ function loadQuestion() {
     const currentWord = wordsData[currentQuestionIndex];
     questionText.innerHTML = "ما معنى هذه الكلمة؟";
     
-    // عرض الكلمة المتاحة (باللاتينية أو الرموز اليزيدية)
+    // إذا لم تكن هناك كلمة يزيدي (مثل الكلمات الألمانية)، سنعرض الكلمة الألمانية نفسها في السؤال
     wordDisplay.innerHTML = currentWord.yezidi ? currentWord.yezidi : currentWord.kurmanji;
 
     // تشغيل صوت الكلمة تلقائياً عند ظهور السؤال بمثابة مساعدة
@@ -194,8 +189,6 @@ function loadQuestion() {
 // التحقق من الإجابة
 function checkAnswer(selected, correct) {
     const resultDiv = document.getElementById("quiz-result");
-    if (!resultDiv) return;
-
     if (selected === correct) {
         resultDiv.innerHTML = "<span style='color: #2ecc71;'>إجابة صحيحة! أحسنت.</span>";
         score++;
