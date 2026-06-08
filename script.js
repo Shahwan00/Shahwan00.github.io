@@ -5,7 +5,7 @@ const lettersData = [
     { yezidi: "𐺃", kurmanji: "P", arabic: "پاء", audio: "audio/p.mp3" }, // تم التصحيح
     { yezidi: "𐺂", kurmanji: "Ph", arabic: "باء انفجارية", audio: "audio/ph.mp3" },
     { yezidi: "𐺄", kurmanji: "T'", arabic: "تاء", audio: "audio/t.mp3" },
-    { yezidi: "𐺅", kurmanji: "S", arabic: "ثاء", audio: "audio/s.mp3" },
+    { yezidi: "𐺫", kurmanji: "S", arabic: "ء", audio: "audio/s.mp3" },
     { yezidi: "𐺆", kurmanji: "C", arabic: "جيم", audio: "audio/j.mp3" },
     { yezidi: "𐺇", kurmanji: "Ch", arabic: "تشاء", audio: "audio/ch.mp3" },
     { yezidi: "𐺈", kurmanji: "C'", arabic: "تشاء مشددة", audio: "audio/ch_alt.mp3" },
@@ -22,12 +22,12 @@ const lettersData = [
 
 
     { yezidi: "𐺕", kurmanji: "T", arabic: "طاء", audio: "audio/ta.mp3" },
-    { yezidi: "𐺖", kurmanji: "Z'", arabic: "ظاء", audio: "audio/ze.mp3" },
+
     { yezidi: "𐺗", kurmanji: "E'", arabic: "عين", audio: "audio/eyn.mp3" },
     { yezidi: "𐺘", kurmanji: "X'", arabic: "غين", audio: "audio/xheyn.mp3" },
     { yezidi: "𐺙", kurmanji: "F", arabic: "فاء", audio: "audio/f.mp3" },
-    { yezidi: "𐺚", kurmanji: "V", arabic: "ڤاء", audio: "audio/v.mp3" },
-    { yezidi: "𐺛", kurmanji: "V", arabic: "واو / ڤ (شكل بديل)", audio: "audio/v_alt.mp3" },
+    { yezidi: "𐺛", kurmanji: "V", arabic: "ڤاء", audio: "audio/v.mp3" },
+
     { yezidi: "𐺜", kurmanji: "Q", arabic: "قاف", audio: "audio/q.mp3" },
     { yezidi: "𐺝", kurmanji: "K", arabic: "كاف", audio: "audio/k.mp3" },
     { yezidi: "𐺞", kurmanji: "Kh'", arabic: "كاف مشددة", audio: "audio/kh.mp3" },
@@ -36,11 +36,11 @@ const lettersData = [
     { yezidi: "𐺡", kurmanji: "M", arabic: "ميم", audio: "audio/m.mp3" },
     { yezidi: "𐺢", kurmanji: "N", arabic: "نون", audio: "audio/n.mp3" },
     { yezidi: "𐺣𐺣", kurmanji: "U", arabic: "واو قصيرة / ضمة", audio: "audio/u.mp3" },
-    { yezidi: "𐺤", kurmanji: "Û", arabic: "واو ممدودة", audio: "audio/uu.mp3" },
-    { yezidi: "𐺥", kurmanji: "W", arabic: "واو (W)", audio: "audio/w.mp3" },
-    { yezidi: "𐺦", kurmanji: "O", arabic: "واو تفخيم (O)", audio: "audio/o.mp3" },
-    { yezidi: "𐺧", kurmanji: "E", arabic: "فتحة / ألف قصيرة", audio: "audio/e.mp3" },
-    { yezidi: "𐺨", kurmanji: "H", arabic: "هاء", audio: "audio/ha.mp3" },
+    { yezidi: "𐺣𐺣", kurmanji: "Û", arabic: "واو ممدودة", audio: "audio/uu.mp3" },
+    { yezidi: "𐺤", kurmanji: "W", arabic: "واو (W)", audio: "audio/w.mp3" },
+    { yezidi: "𐺣", kurmanji: "O", arabic: "واو تفخيم (O)", audio: "audio/o.mp3" },
+    { yezidi: "𐺦", kurmanji: "E", arabic: "فتحة / ألف قصيرة", audio: "audio/e.mp3" },
+    { yezidi: "𐺧", kurmanji: "H", arabic: "هاء", audio: "audio/ha.mp3" },
     { yezidi: "𐺩", kurmanji: "Y", arabic: "ياء", audio: "audio/y.mp3" },
     { yezidi: "𐺰", kurmanji: "Ł", arabic: "لام مفخمة (تاريخية)", audio: "audio/lam_dot.mp3" },
     { yezidi: "𐺱", kurmanji: "Ê", arabic: "ياء بحركات تاريخية", audio: "audio/yot_circumflex.mp3" }
@@ -48,12 +48,12 @@ const lettersData = [
 
 // 2. قاعدة بيانات الكلمات (تمت إضافة 20 كلمة ألمانية وشرحها بالعربي)
 const wordsData = [
-    { yezidi: "𐺀𐺁", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
-    { yezidi: "𐺃𐺁", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
-    { yezidi: "𐺁𐺀𐺁", kurmanji: "Bav", arabic: "أب", audio: "audio/word_bav.mp3" },
+    { yezidi: "𐺀𐺛", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
+    { yezidi: "𐺈𐺀𐺛", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
+    { yezidi: "𐺁𐺀𐺁", kurmanji: "Bab", arabic: "أب", audio: "audio/word_bav.mp3" },
     
     // --- الكلمات الألمانية الجديدة المضافة ---
-    { yezidi: "", kurmanji: "Hallo", arabic: "مرحباً", audio: "audio/hallo.mp3" },
+    { yezidi: "𐺑𐺠𐺀𐺛", kurmanji: "Hallo", arabic: "مرحباً", audio: "audio/hallo.mp3" },
     { yezidi: "", kurmanji: "Guten Morgen", arabic: "صباح الخير", audio: "audio/guten_morgen.mp3" },
     { yezidi: "", kurmanji: "Bitte", arabic: "من فضلك / العفو", audio: "audio/bitte.mp3" },
     { yezidi: "", kurmanji: "Danke", arabic: "شكراً", audio: "audio/danke.mp3" },
