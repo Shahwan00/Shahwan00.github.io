@@ -23,7 +23,7 @@ const lettersData = [
 
     { yezidi: "𐺕", kurmanji: "T", arabic: "طاء", audio: "audio/ta.mp3" },
 
-    { yezidi: "𐺗", kurmanji: "E'", arabic: "عين", audio: "audio/eyn.mp3" },
+    { yezidi: "𐺗", kurmanji: "A'", arabic: "عين", audio: "audio/eyn.mp3" },
     { yezidi: "𐺘", kurmanji: "X'", arabic: "غين", audio: "audio/xheyn.mp3" },
     { yezidi: "𐺙", kurmanji: "F", arabic: "فاء", audio: "audio/f.mp3" },
     { yezidi: "𐺛", kurmanji: "V", arabic: "ڤاء", audio: "audio/v.mp3" },
@@ -35,7 +35,7 @@ const lettersData = [
     { yezidi: "𐺠", kurmanji: "L", arabic: "لام", audio: "audio/l.mp3" },
     { yezidi: "𐺡", kurmanji: "M", arabic: "ميم", audio: "audio/m.mp3" },
     { yezidi: "𐺢", kurmanji: "N", arabic: "نون", audio: "audio/n.mp3" },
-    { yezidi: "𐺣𐺣", kurmanji: "U", arabic: "واو قصيرة / ضمة", audio: "audio/u.mp3" },
+    
     { yezidi: "𐺣𐺣", kurmanji: "Û", arabic: "واو ممدودة", audio: "audio/uu.mp3" },
     { yezidi: "𐺤", kurmanji: "W", arabic: "واو (W)", audio: "audio/w.mp3" },
     { yezidi: "𐺣", kurmanji: "O", arabic: "واو تفخيم (O)", audio: "audio/o.mp3" },
