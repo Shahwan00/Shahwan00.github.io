@@ -5,7 +5,7 @@ const lettersData = [
     { yezidi: "𐺃", kurmanji: "P", arabic: "پاء", audio: "audio/p.mp3" }, // تم التصحيح
     { yezidi: "𐺂", kurmanji: "Ph", arabic: "باء انفجارية", audio: "audio/ph.mp3" },
     { yezidi: "𐺄", kurmanji: "T'", arabic: "تاء", audio: "audio/t.mp3" },
-    { yezidi: "𐺫", kurmanji: "S", arabic: "ء", audio: "audio/s.mp3" },
+    { yezidi: "𐺫", kurmanji: "", arabic: "ء", audio: "audio/s.mp3" },
     { yezidi: "𐺆", kurmanji: "C", arabic: "جيم", audio: "audio/j.mp3" },
     { yezidi: "𐺇", kurmanji: "Ch", arabic: "تشاء", audio: "audio/ch.mp3" },
     { yezidi: "𐺈", kurmanji: "C'", arabic: "تشاء مشددة", audio: "audio/ch_alt.mp3" },
@@ -48,9 +48,9 @@ const lettersData = [
 
 // 2. قاعدة بيانات الكلمات (تمت إضافة 20 كلمة ألمانية وشرحها بالعربي)
 const wordsData = [
-    { yezidi: "𐺀𐺛", kurmanji: "Av", arabic: "ماء", audio: "audio/word_av.mp3" },
-    { yezidi: "𐺈𐺀𐺛", kurmanji: "Çav", arabic: "عين", audio: "audio/word_chav.mp3" },
-    { yezidi: "𐺁𐺀𐺁", kurmanji: "Bab", arabic: "أب", audio: "audio/word_bav.mp3" },
+    { yezidi: "𐺀𐺛", kurmanji: "Wasser", arabic: "ماء", audio: "audio/word_av.mp3" },
+    { yezidi: "𐺈𐺀𐺛", kurmanji: "Auge", arabic: "عين", audio: "audio/word_chav.mp3" },
+    { yezidi: "𐺁𐺀𐺁", kurmanji: "Vater", arabic: "أب", audio: "audio/word_bav.mp3" },
     
     // --- الكلمات الألمانية الجديدة المضافة ---
     { yezidi: "𐺑𐺠𐺀𐺛", kurmanji: "Hallo", arabic: "مرحباً", audio: "audio/hallo.mp3" },
