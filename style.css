@@ -252,11 +252,6 @@ body {
     display: none;
 }
 
-/* إظهار المرحلة النشطة فقط */
-.section.active {
-    display: block;
-}
-
 .section {
     display: none !important;
 }
@@ -264,6 +259,7 @@ body {
 .section.active {
     display: block !important;
 }
+  
 
 
   
