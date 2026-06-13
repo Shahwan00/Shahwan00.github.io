@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght=200..1000&display=swap');
 
 @font-face {
   font-family: 'Noto Serif Yezidi';
@@ -122,9 +122,14 @@ body {
     align-items: center;
 }
 
-
-
+/* تأثير حركة الماوس المصحح والمغلق بشكل سليم */
 .card:hover {
+    transform: translateY(-3px);
+    border-color: #3498db;
+    background-color: #e8f4fd;
+}
+
+/* تنسيق النص اليزيدي المطور لمنع خروج الحروف */
 .yezidi-text {
     font-family: 'YezidiFont', 'Noto Serif Yezidi', sans-serif;
     font-size: 28px;
@@ -133,15 +138,6 @@ body {
     word-wrap: break-word;       
     overflow-wrap: break-word;   
     white-space: normal;         
-}
-
-  
-  
-.yezidi-text {
-    font-family: 'YezidiFont', 'Noto Serif Yezidi', sans-serif;
-    font-size: 32px;
-    color: #2c3e50;
-    margin-bottom: 5px;
 }
 
 .translation {
@@ -215,7 +211,6 @@ body {
         padding: 10px 0;
     }
 
-    /* تكبير وتوضيح اللوجوهات على الموبايل */
     .header-logo-right img {
         max-height: 90px; 
     }
@@ -232,25 +227,19 @@ body {
         font-size: 16px;
     }
 
-    /* ضبط كروت الحروف لتظهر بشكل متناسق جداً عمودين في الموبايل */
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
     
     .options-grid {
-        grid-template-columns: 1fr; /* خيارات الاختبار تحت بعض في الموبايل */
+        grid-template-columns: 1fr;
     }
 }
 
 /* ==========================================================================
-   أكواد التحكم بالإظهار والإخفاء (تمت إضافتها لربط الملف مع الجافا سكريبت والـ HTML)
+   أكواد التحكم بالإظهار والإخفاء النظيفة والمعدلة بدون تكرار
    ========================================================================== */
-
-/* إخفاء الأقسام والمراحل بشكل افتراضي */
-.section {
-    display: none;
-}
 
 .section {
     display: none !important;
@@ -259,7 +248,3 @@ body {
 .section.active {
     display: block !important;
 }
-  
-
-
-  
