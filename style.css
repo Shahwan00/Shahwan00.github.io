@@ -116,15 +116,27 @@ body {
     padding: 15px;
     cursor: pointer;
     transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+
 
 .card:hover {
-    transform: translateY(-3px);
-    border-color: #3498db;
-    background-color: #e8f4fd;
+.yezidi-text {
+    font-family: 'YezidiFont', 'Noto Serif Yezidi', sans-serif;
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    word-wrap: break-word;       
+    overflow-wrap: break-word;   
+    white-space: normal;         
 }
 
-/* تفعيل الخط اليزيدي للرموز */
+  
+  
 .yezidi-text {
     font-family: 'YezidiFont', 'Noto Serif Yezidi', sans-serif;
     font-size: 32px;
