@@ -256,3 +256,14 @@ body {
 .section.active {
     display: block;
 }
+
+.section {
+    display: none !important;
+}
+
+.section.active {
+    display: block !important;
+}
+
+
+  
