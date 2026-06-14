@@ -48,7 +48,7 @@ const lettersData = [
 
 // 2. قاعدة بيانات الكلمات (تمت إضافة 20 كلمة ألمانية وشرحها بالعربي)
 const wordsData = [
-    { yezidi: "𐺀𐺛", kurmanji: "Wasser", arabic: "ماء", audio: "audio/word_av.mp3" },
+    { yezidi: "𐺋𐺀𐺞", kurmanji: "Mutter", arabic: "الام", audio: "audio/word_av.mp3" },
     { yezidi: "𐺈𐺀𐺛", kurmanji: "Auge", arabic: "عين", audio: "audio/word_chav.mp3" },
     { yezidi: "𐺁𐺀𐺁", kurmanji: "Vater", arabic: "أب", audio: "audio/word_bav.mp3" },
     
