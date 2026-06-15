@@ -55,6 +55,10 @@ const wordsData = [
 { yezidi: "𐺁𐺀𐺍𐺀𐺢", kurmanji: "Regen", arabic: "مطر", audio: "audio/Regen.mp3" },
 
 { yezidi: "𐺆𐺌𐺧", kurmanji: "Ort", arabic: "مكان", audio: "audio/Ort.mp3" },
+
+{ yezidi: "𐺃𐺦𐺄𐺀", kurmanji: "unentschieden", arabic: "تعادل", audio: "audio/unentschieden.mp3" },
+
+{ yezidi: "𐺠𐺨𐺑𐺄𐺌𐺞", kurmanji: "Spielen", arabic: "الالعاب", audio: "audio/Spielen.mp3" },
     
     
     // --- الكلمات الألمانية الجديدة المضافة ---
