@@ -51,6 +51,11 @@ const wordsData = [
     { yezidi: "𐺋𐺀𐺞", kurmanji: "Mutter", arabic: "الام", audio: "audio/word_av.mp3" },
     { yezidi: "𐺈𐺀𐺛", kurmanji: "Auge", arabic: "عين", audio: "audio/word_chav.mp3" },
     { yezidi: "𐺁𐺀𐺁", kurmanji: "Vater", arabic: "أب", audio: "audio/word_bav.mp3" },
+
+{ yezidi: "𐺁𐺀𐺍𐺀𐺢", kurmanji: "Regen", arabic: "مطر", audio: "audio/Regen.mp3" },
+
+{ yezidi: "𐺆𐺌𐺧", kurmanji: "Ort", arabic: "مكان", audio: "audio/Ort.mp3" },
+    
     
     // --- الكلمات الألمانية الجديدة المضافة ---
     { yezidi: "𐺑𐺠𐺀𐺛", kurmanji: "Hallo", arabic: "مرحباً", audio: "audio/hallo.mp3" },
