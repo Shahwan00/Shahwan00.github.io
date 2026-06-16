@@ -68,7 +68,7 @@ const wordsData = [
     { yezidi: "𐺊𐺠𐺡𐺦𐺄 𐺜𐺦𐺁𐺣𐺠", kurmanji: "Danke", arabic: "شكراً", audio: "audio/danke.mp3" },
     { yezidi: "𐺁𐺦𐺠𐺩", kurmanji: "Ja", arabic: "نعم", audio: "audio/ja.mp3" },
     { yezidi: "𐺢𐺀", kurmanji: "Nein", arabic: "لا", audio: "audio/nein.mp3" },
-    { yezidi: "𐺀𐺛", kurmanji: "Wasser", arabic: "ماء (ألماني)", audio: "audio/wasser.mp3" },
+    { yezidi: "𐺀𐺛", kurmanji: "Wasser", arabic: "ماء (Wasser)", audio: "audio/wasser.mp3" },
     { yezidi: "𐺢𐺀𐺢", kurmanji: "Brot", arabic: "خبز", audio: "audio/brot.mp3" },
     { yezidi: "𐺡𐺀𐺠", kurmanji: "Haus", arabic: "منزل", audio: "audio/haus.mp3" },
     { yezidi: "𐺄𐺦𐺍𐺦𐺡𐺃𐺩𐺠", kurmanji: "Auto", arabic: "سيارة", audio: "audio/auto.mp3" },
