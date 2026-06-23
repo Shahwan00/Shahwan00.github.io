@@ -81,6 +81,32 @@ const wordsData = [
     { yezidi: "𐺩𐺛𐺀𐺍", kurmanji: "Nacht", arabic: "ليلة", audio: "audio/nacht.mp3" },
     { yezidi: "𐺒𐺨𐺍", kurmanji: "Milch", arabic: "حليب", audio: "audio/milch.mp3" },
     { yezidi: "𐺑𐺩𐺛", kurmanji: "Apfel", arabic: "تفاحة", audio: "audio/apfel.mp3" },
+
+
+{ yezidi: "𐺒𐺣𐺣𐺒𐺄𐺌𐺢", kurmanji: "Waschen", arabic: "غسل", audio: "audio/Waschen.mp3" },
+{ yezidi: "𐺃𐺀𐺜𐺌𐺐𐺝𐺌𐺍𐺌𐺢", kurmanji: "Reinigen", arabic: "تنظيف", audio: "audio/Reinigen.mp3" },
+{ yezidi: "𐺀𐺛𐺨𐺄𐺌𐺢", kurmanji: "Werfen", arabic: "رمي", audio: "audio/Werfen.mp3" },
+{ yezidi: "𐺟𐺦𐺧𐺩𐺒𐺄𐺌𐺢", kurmanji: "Erreichen", arabic: "الوصول", audio: "audio/Erreichen.mp3" },
+{ yezidi: "𐺝𐺦𐺄𐺌𐺢", kurmanji: "Fallen", arabic: "سقوط", audio: "audio/Fallen.mp3" },
+{ yezidi: "𐺧𐺌𐺠𐺝𐺌𐺒𐺨𐺢", kurmanji: "Steigen", arabic: "الصعود", audio: "audio/Steigen.mp3" },
+{ yezidi: "𐺋𐺀𐺝𐺦𐺄𐺌𐺢", kurmanji: "Sinken", arabic: "الهبوط", audio: "audio/Sinken.mp3" },
+{ yezidi: "𐺟𐺦𐺍𐺨𐺢", kurmanji: "Suchen", arabic: "البحث", audio: "audio/Suchen.mp3" },
+{ yezidi: "𐺋𐺨𐺄𐺌𐺢", kurmanji: "Finden", arabic: "العثور", audio: "audio/Finden.mp3" },
+{ yezidi: "𐺃𐺀𐺍𐺀𐺑𐺄𐺌𐺢", kurmanji: "Schützen", arabic: "حماية", audio: "audio/Schützen.mp3" },
+
+
+
+    { yezidi: "𐺋𐺌𐺠", kurmanji: "Herz", arabic: "قلب", audio: "audio/Herz.mp3" },
+
+{ yezidi: "𐺟𐺦𐺍𐺡", kurmanji: "Heiß", arabic: "حار", audio: "audio/Heiß.mp3" },
+
+
+{ yezidi: "𐺩𐺒", kurmanji: "Schmerz", arabic: "الم", audio: "audio/Schmerz.mp3" },
+
+{ yezidi: "𐺦𐺍𐺩", kurmanji: "Ja", arabic: "نعم", audio: "audio/Jaa.mp3" },
+
+
+    
     { yezidi: "𐺊𐺀𐺄𐺍", kurmanji: "Tschüss", arabic: "وداعاً", audio: "audio/tschuess.mp3" }
 ];
 
