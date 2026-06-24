@@ -210,10 +210,10 @@ function loadQuestion() {
 function checkAnswer(selected, correct) {
     const resultDiv = document.getElementById("quiz-result");
     if (selected === correct) {
-        resultDiv.innerHTML = "<span style='color: #2ecc71;'>إجابة صحيحة! أحسنت.</span>";
+        resultDiv.innerHTML = "<span style='color: #2ecc71;'> !Richtige Antwort! Gut gemacht إجابة صحيحة! أحسنت.</span>";
         score++;
     } else {
-        resultDiv.innerHTML = `<span style='color: #e74c3c;'>إجابة خاطئة. الإجابة الصحيحة هي: ${correct}</span>`;
+        resultDiv.innerHTML = `<span style='color: #e74c3c;'> !Falsche Antwort. Die richtige Antwort ist إجابة خاطئة. الإجابة الصحيحة هي: ${correct}</span>`;
     }
 
     // الانتقال للسؤال التالي بعد ثانيتين لقراءة النتيجة
