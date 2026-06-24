@@ -175,7 +175,7 @@ function loadQuestion() {
     }
 
     const currentWord = wordsData[currentQuestionIndex];
-    questionText.innerHTML = "ما معنى هذه الكلمة؟";
+    questionText.innerHTML = " ​Was bedeutet dieses Wort? ما معنى هذه الكلمة؟";
     
     // إذا لم تكن هناك كلمة يزيدي (مثل الكلمات الألمانية)، سنعرض الكلمة الألمانية نفسها في السؤال
     wordDisplay.innerHTML = currentWord.yezidi ? currentWord.yezidi : currentWord.kurmanji;
