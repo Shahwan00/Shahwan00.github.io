@@ -169,8 +169,8 @@ function loadQuestion() {
     optionsGrid.innerHTML = "";
 
     if (currentQuestionIndex >= wordsData.length) {
-        questionText.innerHTML = "أحسنت! لقد أكملت الاختبار بنجاح.";
-        wordDisplay.innerHTML = `النتيجة: ${score} من ${wordsData.length}`;
+        questionText.innerHTML = " ​!Gut gemacht! Du hast den Test erfolgreich bestanden    أحسنت! لقد أكملت الاختبار بنجاح.";
+        wordDisplay.innerHTML = ` Ergebnisse النتيجة: ${score} من Von ${wordsData.length}`;
         return;
     }
 
