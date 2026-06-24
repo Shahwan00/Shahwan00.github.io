@@ -99,6 +99,24 @@ const wordsData = [
 
     
 { yezidi: "𐺊𐺀𐺄𐺍", kurmanji: "", arabic: "وداعاً (Tschüss)", audio: "audio/tschuess.mp3" },
+
+
+
+{ yezidi: "𐺟𐺣𐺍", kurmanji: "", arabic: "ذئب (der Wolf)", audio: "audio/der_Wolf.mp3" },
+{ yezidi: "𐺎𐺣𐺛𐺨", kurmanji: "", arabic: "ثعلب (der Fuchs)", audio: "audio/der_Fuchs.mp3" },
+{ yezidi: "𐺒𐺩𐺍", kurmanji: "", arabic: "أسد (der Löwe)", audio: "audio/der_Loewe.mp3" },
+{ yezidi: "𐺂𐺌𐺠𐺌𐺢𐺟", kurmanji: "", arabic: "نمر (der Tiger)", audio: "audio/der_Tiger.mp3" },
+{ yezidi: "𐺙𐺌𐺠", kurmanji: "", arabic: "فيل (der Elefant)", audio: "audio/der_Elefant.mp3" },
+{ yezidi: "𐺧𐺌𐺍𐺈", kurmanji: "", arabic: "دب (der Bär)", audio: "audio/der_Baer.mp3" },
+{ yezidi: "𐺈𐺌𐺛𐺩𐺞", kurmanji: "", arabic: "عصفور (der Spatz / der Vogel)", audio: "audio/der_Spatz.mp3" },
+{ yezidi: "𐺐𐺣𐺣𐺐𐺨", kurmanji: "", arabic: "قنفذ (der Igel)", audio: "audio/der_Igel.mp3" },
+{ yezidi: "𐺡𐺀𐺑𐺨", kurmanji: "", arabic: "سمكة (der Fisch)", audio: "audio/der_Fisch.mp3" },
+{ yezidi: "𐺡𐺌𐺒𐺞", kurmanji: "", arabic: "فأر (die Maus)", audio: "audio/die_Maus.mp3" },
+
+
+
+
+    
 ];
 
 // المتغيرات الخاصة بالاختبار
